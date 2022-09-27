@@ -14,7 +14,13 @@ module.exports = {
                 collapsable: false, // 可选的, 默认值是 true,
                 sidebarDepth: 2,    // 可选的, 默认值是 1
                 children: [
-                    ['/vue/初探VUE', '初探VUE']
+                    ['/vue/初探VUE', '初探VUE'],
+                    ['/vue/VUE全家桶之Axios', 'VUE全家桶之Axios'],
+                    ['/vue/VUE全家桶之Pinia', 'VUE全家桶之Pinia'],
+                    ['/vue/VUE全家桶之VUE-Router路由', 'VUE全家桶之VUE-Router路由'],
+                    ['/vue/VUE全家桶之Vuex', 'VUE全家桶之Vuex'],
+                    ['/vue/VUE全家桶之Nuxt', 'VUE全家桶之Nuxt'],
+                    ['/vue/VUE全家桶之ElementUI', 'VUE全家桶之ElementUI'],
                 ]
             },
             {
