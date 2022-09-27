@@ -9,6 +9,20 @@ module.exports = {
         ],
         sidebar: [
             {
+                title: '算法',
+                path: '/leetcode/',      // 可选的, 标题的跳转链接，应为绝对路径且必须存在
+                collapsable: false, // 可选的, 默认值是 true,
+                sidebarDepth: 2,    // 可选的, 默认值是 1
+                children: [
+                    ['/leetcode/异或的用法', '异或的用法'],
+                    ['/leetcode/异或用法之消消乐', '异或用法之消消乐'],
+                    ['/leetcode/选择排序的实现', '选择排序的实现'],
+                    ['/leetcode/冒泡排序的实现', '冒泡排序的实现'],
+                    ['/leetcode/插入排序的实现', '插入排序的实现'],
+                    ['/leetcode/二分法的详解与拓展', '二分法的详解与拓展'],
+                ]
+            },
+            {
                 title: 'VUE',
                 path: '/vue/',      // 可选的, 标题的跳转链接，应为绝对路径且必须存在
                 collapsable: false, // 可选的, 默认值是 true,
@@ -43,23 +57,6 @@ module.exports = {
                 ]
             }
         ]
-
-        // sidebar: {
-        //     '/': [
-        //         '',
-        //     ],
-        //     '/foo/': [
-        //         '',
-        //         'one',
-        //         'two'
-        //     ],
-        // }
-
-        // sidebar: [
-        //     '/foo',
-        //     '/foo/one',
-        //     '/foo/two',
-        // ]
     },
     configureWebpack: {
         resolve: {
