@@ -1,36 +1,85 @@
-# This is a basic workflow to help you get started with Actions
-
-name: CI
-
-# Controls when the workflow will run
+name: Publish And Deploy Docs.ycy88.com
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
+  # 监听 push 操作
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+    #branches:
+      # main 分支
+      #- 'main'
+      #- 'releases/**'
+    tags:        
+      - v.*
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  build-and-deploy:
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+    # 下载源码
+    - name: Checkout
+      uses: actions/checkout@master
+      # 下载本次 tag标签标记 commitId代码
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+
+
+    # 打包构建
+    - name: Build
+      uses: actions/setup-node@master
+    - run: yarn
+    - run: yarn build
+    - run: tar -zcvf release.tgz docs/.vuepress/dist
+    # 基于这次的tag标签来下载依赖 打包 然后把 后续几个文件生成  tgz 压缩包
+
+    # 发布 Release
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.TOKEN }}
+        # 开始创建写入到项目secrets的TOKEN
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        draft: false
+        prerelease: false
+
+    # 上传构建结果到 Release
+    - name: Upload Release Asset
+      id: upload-release-asset
+      uses: actions/upload-release-asset@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./release.tgz
+        asset_name: release.tgz
+        asset_content_type: application/x-tgz
+
+    # 部署到服务器
+    - name: Deploy
+      uses: appleboy/ssh-action@master
+      with:
+        #  ['entryPoint', 'args', 'host', 'port', 'passphrase', 'username', 'password', 'sync', 'use_insecure_cipher', 'cipher', 'timeout',
+        # 'command_timeout', 'key', 'key_path', 'fingerprint', 'proxy_host', 'proxy_port', 'proxy_username', 'proxy_password', 'proxy_passphrase',
+        # 'proxy_timeout', 'proxy_key', 'proxy_key_path',
+        # 'proxy_fingerprint', 'proxy_cipher', 'proxy_use_insecure_cipher', 'script', 'script_stop', 'envs', 'debug']
+        host: ${{ secrets.HOST }}
+        # 远程服务器的地址
+        username: ${{ secrets.USERNAME }}
+        # 用户名
+        password: ${{ secrets.PASSWORD }}
+        # 密码
+        port: ${{ secrets.PORT }}
+        # 端口号
+
+        # 然后
+        # 进入对应目录
+        # 下载压缩的tgz到服务器
+        # 解压
+        # 下载项目生成依赖
+        # 然后通过 pm2 进行管理启动
+        script: |
+          cd /usr/local/nginx/web/docs-web
+          rm -rf dist
+          wget https://github.com/bobo88/test-actions/releases/latest/download/release.tgz -O release.tgz
+          tar zxvf release.tgz
+
+
