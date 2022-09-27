@@ -79,7 +79,7 @@ jobs:
         script: |
           cd /usr/local/nginx/web/docs-web
           rm -rf dist
-          wget https://github.com/bobo88/test-actions/releases/latest/download/release.tgz -O release.tgz
+          wget https://github.com/bobo88/docs-ycy88/releases/latest/download/release.tgz -O release.tgz
           tar zxvf release.tgz
 
 
