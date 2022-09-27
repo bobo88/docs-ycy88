@@ -24,7 +24,7 @@ jobs:
     - name: Build
       uses: actions/setup-node@master
     - run: yarn
-    - run: yarn build
+    - run: yarn docs:build
     - run: tar -zcvf release.tgz docs/.vuepress/dist
     # 基于这次的tag标签来下载依赖 打包 然后把 后续几个文件生成  tgz 压缩包
 
