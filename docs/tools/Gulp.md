@@ -1,6 +1,7 @@
 ### Gulp
 ::: tip Gulp的概念
-自动化构建工具，增强你的工作流程！
+自动化构建工具，增强你的工作流程！<br />
+关键词：”管道流“
 :::
 
 #### 一、Gulp 初始化：
@@ -75,9 +76,29 @@ npm install gulp-less --save-dev
 // 当执行gulp default或者gulp时，将会调用default任务里面的所有任务
 ``` 
 
-<!-- 
+
+#### 三、Gulp常用插件：
 ```js
-``` -->
+// gulp-less：处理less预编译文件
+// gulp-minify-css：css文件压缩
+// gulp-rename：改变文件名
+// gulp-autoprefixer：自动添加css前缀
+// gulp-concat：合并js文件
+// gulp-uglify：压缩js代码
+// gulp-imagemin：压缩图片
+// gulp-livereload：自动刷新页面
+// gulp-cache：图片缓存，只有图片替换了才压缩
+// gulp-htmlmin：压缩HTML
+// gulp-babel/babel-core/babel-preset-es2015：用于解析ES6转换为ES5
+```
+#### 四、Gulp常用API：
+```js
+// src()：创建一个流，用于从文件系统读取 Vinyl 对象。
+// dest()：创建一个用于将 Vinyl 对象写入到文件系统的流。
+// series()：将任务函数和/或组合操作组合成更大的操作，这些操作将按顺序依次执行。关键词“串行（顺序）执行”
+// parallel()：将任务功能和/或组合操作组合成同时执行的较大操作。关键词“并行执行”
+// watch()：监听 globs 并在发生更改时运行任务。任务与任务系统的其余部分被统一处理。
+```
 
 
 
