@@ -1,3 +1,4 @@
+``` js
 ;(function(){
     /**
      * 171. Excel 表列序号
@@ -50,3 +51,4 @@
     console.log(titleToNumber('ZZ'))
 
 })()
+```

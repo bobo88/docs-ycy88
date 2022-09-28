@@ -1,3 +1,4 @@
+``` js
 ;(function(){
     /**
      * 412. Fizz Buzz
@@ -40,3 +41,4 @@
     console.log(fizzBuzz(15))
 
 })()
+```

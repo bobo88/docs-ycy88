@@ -1,1 +1,1 @@
-'#  VUE全家桶之Vuex' 
+### VUE全家桶之Vuex
