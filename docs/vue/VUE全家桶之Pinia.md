@@ -112,3 +112,17 @@ persist: {
 }
 ```
 
+#### 二、Pinia源码简析：
+![An image](~@/pinia.png)
+
+
+
+参考：<br />
+<a href="https://pinia.web3doc.top/" target="_blank">官网（中文）</a><br />
+<a href="https://pinia.vuejs.org/" target="_blank">官网（英语）</a><br />
+
+相关文章：<br />
+<a href="https://segmentfault.com/a/1190000040373313" target="_blank">Pinia 快速入门</a><br />
+<a href="https://juejin.cn/post/7031727358369333279" target="_blank">Pinia(皮尼亚)源码分析</a><br />
+<a href="https://segmentfault.com/a/1190000041246156" target="_blank">Pinia.js 上手指南</a><br />
+<a href="https://juejin.cn/post/7063376847198748702" target="_blank">拥抱pinia，快速上手，详解指南</a><br />

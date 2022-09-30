@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            align-content: flex-end;
+        }
+        li {
+            /* display: fl; */
+            /* width: 100px;
+            height: 300px; */
+            height: 100%;
+            background: #f60;
+        }
+        .item_1 {
+            min-height: 50px;
+            flex-grow: 1;
+        }
+        .item_2 {
+            min-height: 70px;
+            flex-grow: 1;
+        }
+        .item_3 {
+            min-height: 90px;
+            flex-grow: 2;
+        }
+        .item_4 {
+            min-height: 110px;
+            flex-grow: 1;
+        }
+        .item_5 {
+            min-height: 130px;
+            flex-grow: 1;
+        }
+        .box {
+            margin: 0 auto;
+            width: 500px;
+            height: 500px;
+            border: 1px solid #069;
+            /* display: flex;
+            justify-content: center;
+            align-items: center; */
+            position: relative;
+        }
+        .box p {
+            /* margin: auto; */
+            /* position: absolute;
+            bottom: 0;
+            left: 0;
+            top: 0;
+            right: 0;
+            margin: auto; */
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            -webkit-transform: translate(-50%,-50%);
+            -moz-transform: translate(-50%,-50%);
+            transform:translate(-50%,-50%);
+
+            width: 100px;
+            height: 100px;
+            background: #f00;
+        }
+    </style>
+</head>
+<body>
+    <!-- <ul>
+        <li class="item_1">11111</li>
+        <li class="item_2">22222</li>
+        <li class="item_3">33333</li>
+        <li class="item_4">44444</li>
+        <li class="item_5">55555</li>
+    </ul> -->
+
+    <div class="box">
+        <p>xxxx</p>
+    </div>
+</body>
+</html>
