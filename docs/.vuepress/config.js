@@ -4,6 +4,9 @@ const BASE_PATH = './docs'
 module.exports = {
     title: '袁波',
     description: '技术清单文档',
+    head: [
+        ['link', { rel: 'shortcut icon', type: "image/x-icon", href: `/favicon.ico` }]
+    ],
     themeConfig: {
         nav: [
           { text: 'Home', link: '/' },
