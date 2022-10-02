@@ -26,16 +26,51 @@ $ npx create-nuxt-app <项目名> // npx 在 NPM 版本 5.2.0 默认安装了
 $ yarn create nuxt-app <项目名>
 // 运行上述命令后，根据提示选择自定义的配置：比如服务器框架，UI框架，测试框架等。
 
+// 目录结构
+// assets -- 资源目录： 比如 Less / Sass / JS / images ...
+// components -- 组件目录
+// layouts -- 布局目录
+// middleware -- 中间件目录: 中间件执行流程顺序 「nuxt.config.js」 / 「匹配布局」 / 「匹配页面」
+// pages -- 页面目录：自动生成vue-routervue-router模块的路由配置，<nuxt-link>
+// plugins -- 插件目录
+// static -- 静态文件目录
+// store -- Store 目录
+// nuxt.config.js
+// package.json
+
 ```
 
-<img src="~@/nuxt_1.png" style="height:600px">
-<!-- ![An image](~@/nuxt_1.png) -->
+<!-- <img src="~@/nuxt_1.png"> -->
+![An image](~@/nuxt_1.png)
 
 #### 二、常见命令
+```js
+nuxt	        // 启动一个热加载的 Web 服务器（开发模式） localhost:3000。
+nuxt build	    // 利用 webpack 编译应用，压缩 JS 和 CSS 资源（发布用）。
+nuxt start	    // 以生产模式启动一个 Web 服务器 (需要先执行nuxt build)。
+nuxt generate	// 编译应用，并依据路由配置生成对应的 HTML 文件 (用于静态站点的部署)。
+
+// Nuxt.js集成了：Vue / Vue-router / Vuex / Vue服务端渲染 / Vue-meta
+```
 
 #### 三、项目部署
++ 打包上线
+	1. 执行： npm run build
+	2. 将打包好的文件部署到服务器的某个文件夹中，并在服务器安装node环境
+		+ .nuxt ==> 隐藏文件
+		+ static
+		+ nuxt.config.js
+		+ package.json
+	3. 在服务器上执行： npm install
+	4. 在服务器运行项目： npm run start
+		+ 这时候打开的也是 localhost:3000
+		+ 我们需要使用【nginx】做代理 ==> www.abc.com
+
+![An image](~@/nuxt_2.png)
 
 
+案例源码：<br />
+<a href="https://github.com/bobo88/nuxt-web" target="_blank">Nuxt搭建，PC + M端（移动端）适配 ，服务端渲染SSR，响应式官网</a><br />
 
 参考：<br />
 <a href="https://www.nuxtjs.cn/" target="_blank">官网（中文）</a><br />
