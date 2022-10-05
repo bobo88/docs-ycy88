@@ -42,3 +42,38 @@ hello<string>('Bob')
 hello<number>(123)
 
 const a = null
+
+
+// 类型注解
+let isOK: boolean = true;
+let str: string = 'abc';
+let isNull: null = null;
+let age: number = 18;
+let empty: undefined = undefined;
+let s1: symbol = Symbol();
+
+str = null
+str = undefined
+
+function alertSth(name: string): void {
+    alert(`弹出的名字是: ${name}`)
+}
+alertSth('Bob')
+
+let unusable: void = undefined;
+
+let an: any = 123;
+an = 'Bob';
+an = true;
+an.toString();
+an.hello();
+
+let num1 = 123;
+// num1 = 'Bob'
+
+let anyKey;
+anyKey = 123;
+anyKey = 'Bob';
+anyKey = true;
+
+
