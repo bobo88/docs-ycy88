@@ -3,6 +3,14 @@
 Typescript专题
 :::
 
+::: tip 直接运行ts文件
+ts-node 可以直接运行ts代码, 需要在全局去安装。
+:::
+```js
+$ npm install -g typescript
+$ npm install -g ts-node
+```
+
 #### 专题细分
 + TS序章 - 谈谈“类型思维”
 + TS序章 - 第一个HelloWorld
@@ -26,3 +34,4 @@ Typescript专题
 + Typescript实战 - 代码检查工具TSLint_ESLint
 + Typescript实战 - 单元测试Jest
 + Typescript实战 - 组件封装
+
