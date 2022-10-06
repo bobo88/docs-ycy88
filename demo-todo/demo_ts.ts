@@ -170,3 +170,49 @@ bob = {
 console.log(bob)
 
 
+// function add(x: number, y: number): number {
+//     return x + y
+// }
+// console.log(add(1, 2))
+
+// // 函数表达式
+// let reduce = function(x: number, y: number): number {
+//     return x - y
+// }
+// console.log(reduce(3, 1)) // print: 2
+
+// // 完整的函数表达式
+// let reduce2:(x: number, y: number) => number = function(x: number, y: number): number {
+//     return x - y
+// }
+// console.log(reduce2(3, 1)) // print: 2
+
+function add (x: number, y?: number) {
+    return x + (y || 0)
+}
+console.log(add(8, 1))
+console.log(add(8))
+
+function fullName(firstName: string, lastName = 'Bob') {
+    return firstName + ' ' + lastName
+}
+console.log(fullName('Yuan'))
+console.log(fullName('Yuan', 'BoBo'))
+
+// 剩余参数
+function queueClass(grade: string, ...rest: string[]) {
+    return grade + ': ' + rest.join(',')
+}
+console.log(queueClass('大四班', 'xiaoming', 'xiaoyuan', 'xiaoli'))
+
+// type NumberOrString = (number | string);
+function reload(x: number, y: number): number;
+function reload(x: string, y: number): string;
+function reload(x: string, y: string): string;
+function reload(x: any, y: any): any {
+    return x + y;
+}
+console.log(reload(1, 2))       // print: 3
+console.log(reload('1', 2))     // print: 12
+console.log(reload('1', '2'))   // print: 12
+// console.log(reload(1, '2'))     // 报错： 没有与此调用匹配的重载。...
