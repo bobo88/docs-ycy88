@@ -1,1 +1,1 @@
-### Typescript之变量声明
+### Typescript实战 - 配置tsconfig
