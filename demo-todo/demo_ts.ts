@@ -107,6 +107,66 @@ const group: [x: string, y: number] = ['Bob', 123];
 const [x, y] = group;
 console.log(x, y)
 
+interface StringArray {
+    [index: number]: string
+}
+let names: StringArray = ['Bob', 'Li', 'Yuan'];
 
+
+// interface Person {
+//     name: string;
+//     age: number;
+//     addr: string;
+// }
+
+// let bob: Person = {
+//     name: 'Bob',
+//     age: 28,
+//     addr: 'ShenZhen',
+// }
+
+// // 可选属性
+// interface Person {
+//     name: string;
+//     age: number;
+//     addr?: string;
+// }
+
+// let bob: Person = {
+//     name: 'Bob',
+//     age: 28,
+// }
+
+// interface Person {
+//     name: string;
+//     age?: number;
+//     [propName: string]: any;
+// }
+
+// let bob: Person = {
+//     name: 'Bob',
+//     age: 28,
+//     birth: '10-01'
+// }
+
+
+interface Person {
+    readonly name: string;
+    age: number;
+    [propName: string]: any;
+}
+
+let bob: Person = {
+    name: 'Bo',
+    age: 28,
+    birth: '10-01'
+}
+// bob.name = 'Yuan'; // 报错：无法为“name”赋值，因为它是只读属性。
+bob = {
+    name: 'Bob',
+    age: 22,
+    addr: 'SZ'
+}
+console.log(bob)
 
 

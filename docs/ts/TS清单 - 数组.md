@@ -11,6 +11,11 @@ let arr1: string[] = ['abc', 'Bob', 'xyz'];
 let arr2: Array<string> = ['xiaoming', 'xiaoli', 'xiaoyuan'];
 // 复合类型
 let arr3: (string | number)[] = [123, 'Bob', 'Tst'];
+// 用接口表示数组：一般不用这种方式
+interface StringArray {
+    [index: number]: string
+}
+let names: StringArray = ['Bob', 'Li', 'Yuan'];
 
 // 只读数组
 // 1. 使用"ReadonlyArray"内置类型
