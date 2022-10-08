@@ -317,3 +317,14 @@
 // xiaohong.eat('汉堡包')
 // xiaohong.play('玩具熊')
 
+
+// function Student(name) {
+//     this.name = name;
+// }
+// Student.prototype.school = 'Shenzhen University';
+
+// let stu1 = new Student('Bob');
+// console.log(stu1.name)
+// console.log(stu1.school)
+
+
