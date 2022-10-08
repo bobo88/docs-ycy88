@@ -1,4 +1,4 @@
 ### Hello Leetcode
-::: tip
+::: tip 专题简介
 Leetcode专题
 :::

@@ -1,5 +1,5 @@
 ### Hello Typescript
-::: tip
+::: tip 专题简介
 Typescript专题
 :::
 
