@@ -36,16 +36,68 @@ VUE3 和 VUE2 的差异性主要体现在：
 #### 二、底层封装（重点）
 + 【双向数据绑定】
 ```js
-// 【双向数据绑定】 - 底层监听
-// vue2: Object.defineProperty( )
+// 【双向数据绑定】 - 底层监听原理
+// ====== vue2: Object.defineProperty( )
+// 1. 只能响应首次渲染时候的属性，未声明的数据 未被劫持，所以无法触发视图的更新
+// 2. 不能监听数组的变化： Array型数据还是在getter中收集依赖， setter 本质是通过「重写」操作Array的方法
+// 3. 重写：push()，pop()，shift()，unshift()，splice()，sort()，reverse()
+// 4. 必须遍历对象的每个属性，必须深层遍历嵌套的对象
+// 原理：利用Object.defineProperty()， Observer遍历data每个属性通过defineReactive方法劫持data每个属性的getter和setter。
+// 对应的补丁API：Vue.set / Vue.delete（vm.$set / vm.$delete）
 
-// vue3: Proxy
-
+// ====== vue3: Proxy
+// 1. Proxy的配置项有13种，可以做更细致的事情
+// 2. Proxy 是一个对象，它包装了另一个对象，并允许你拦截对该对象的任何交互。
+// 3. 拦截对象中任意属性的变化, 包括：属性值的读写、属性的添加、属性的删除等
+// 4. 局限性：不兼容IE
+const person = new Proxy({}, {
+  getter (target, propKey) {
+    return target[propKey]
+  },
+  setter (target, propKey, value) {
+    target[propKey] = value;
+  }
+})
+person.name = 'Bob 大帅哥'
+console.log('person.name: ', person.name)
 ```
 
 + 【Diff 算法】的提升
+```html
+<!-- 【Diff 算法】的提升 -->
+vue2.x: 虚拟dom是全量的对比
+
+vue3: 新增【静态标记（patchflag）】
++ 只对比带有patch flag的节点（动态数据所在的节点）
++ 减少了资源的损耗
+
+【hoistStatic 静态提升】
++ vue2 无论元素是否参与更新，每次都会重新创建然后再渲染
++ vue3 对于不参与更新的元素，会做静态提升，只会被创建一次，在渲染时直接复用即可。
+```
+
 + 【Composition API】
+```html
+<!-- 【Composition API】 -->
+vue2.x: 【Option API风格】
++ 不足：逻辑分散，项目文件较大时，维护开发难度变大
+
+vue3: 【Composition API风格】
++ 可以更好的实现高内聚，低耦合，代码逻辑更清晰
+```
+
 + 【mixins更改】
+```html
+<!-- 【mixins更改】 -->
+vue2.x: 【mixins】
++ mixins的生命周期比组件快
++ 变量来源不明确，不利于阅读
++ 多个mixins可能导致冲突，比如都定义了 this.name 作为属性
+
+vue3: 自定义hooks
++ 高内聚，低耦合
+```
+
 
 #### 三、TS的支持度
 ```html
