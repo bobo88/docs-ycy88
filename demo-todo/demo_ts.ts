@@ -327,4 +327,260 @@
 // console.log(stu1.name)
 // console.log(stu1.school)
 
+// class Person {
+//     name: string;
+//     age: number;
+//     constructor(age: number) {
+//         this.age = age;
+//     }
+//     move () {
+//         return `${this.name} is move.`
+//     }
+// }
+// class Student extends Person {
+//     constructor (name: string, age: number) {
+//         super(age);
+//         this.name = name;
+//     }
+//     sayHello () {
+//         return `${this.name} say hello for you.`
+//     }
+// }
+// let stu1 = new Student('Bob', 28)
+// console.log(stu1.sayHello()); // Bob say hello for you.
+// console.log(stu1.move()); // Bob is move.
+
+
+// class Person {
+//     public name: string;
+//     public age: number;
+//     public constructor(name: string, age: number) {
+//         this.name = name;
+//         this.age = age;
+//     }
+//     public move () {
+//         return `${this.name} is move.`
+//     }
+// }
+
+// let p1 = new Person('Bob', 28)
+// console.log(p1.move()); // Bob is move.
+
+// class Person {
+//     private name: string;
+//     constructor(name: string) {
+//         this.name = name;
+//     }
+// }
+
+// let p1 = new Person('Bob')
+// console.log(p1.name); // Error
+
+// class Animal {
+//     private name: string;
+//     constructor(theName: string) { this.name = theName; }
+// }
+
+// class Rhino extends Animal {
+//     constructor() { super("Rhino"); }
+// }
+
+// class Employee {
+//     private name: string;
+//     constructor(theName: string) { this.name = theName; }
+// }
+
+// let animal = new Animal("Goat");
+// let rhino = new Rhino();
+// let employee = new Employee("Bob");
+
+// animal = rhino;
+// animal = employee; // 错误: Animal 与 Employee 不兼容.
+
+// class Person {
+//     private name: string;
+//     constructor(name: string) {
+//         this.name = name;
+//     }
+//     getName () {
+//         return this.name
+//     }
+// }
+
+// let p1 = new Person('Bob')
+// console.log(p1.getName()); // Bob
+
+// class Person {
+//     protected name: string;
+//     protected constructor(name: string) {
+//         this.name = name
+//     }
+// }
+
+// // let p1 = new Person('Bob')     // 报错提示：类“Person”的构造函数是受保护的，仅可在类声明中访问。
+// class Employee extends Person {
+//     constructor(name: string) {
+//         super(name)
+//     }
+//     getName () {
+//         return this.name
+//     }
+// }
+// let p2 = new Employee('Bob')
+// console.log(p2.getName())
+
+// class Person {
+//     readonly name: string;
+//     constructor(name: string) {
+//         this.name = name
+//     }
+// }
+// let p1 = new Person('Bob')    
+// console.log(p1.name)          // print: Bob
+// // p1.name = 'BoBo'           // 报错提示：无法为“name”赋值，因为它是只读属性。
+
+// abstract class Department {
+//     constructor(public name: string) {}
+//     printName(): void {
+//         console.log('Department name: ' + this.name);
+//     }
+//     abstract printMeeting(): void; // 必须在派生类中实现
+// }
+
+// class AccountingDepartment extends Department {
+//     constructor() {
+//         super('Accounting and Auditing'); // 在派生类的构造函数中必须调用 super()
+//     }
+//     printMeeting(): void {
+//         console.log('The Accounting Department meets each Monday at 10am.');
+//     }
+//     generateReports(): void {
+//         console.log('Generating accounting reports...');
+//     }
+// }
+
+// let department: Department;         // 允许创建一个对抽象类型的引用
+// // department = new Department();      // 错误: 不能创建一个抽象类的实例
+// department = new AccountingDepartment(); // 允许对一个抽象子类进行实例化和赋值
+// department.printName();
+// department.printMeeting();
+// department.generateReports();   // 错误: 方法在声明的抽象类中不存在
+
+
+// class Person {
+//     static desc: string = '人类';
+//     name: string;
+//     constructor (name: string) {
+//         this.name = name
+//     }
+// }
+// let p1 = new Person('Bob')
+// console.log(p1.name)           // print: Bob
+// // console.log(p1.desc)        // 报错提示：属性“desc”在类型“Person”上不存在
+// console.log(Person.desc)       // print: 人类
+
+
+// function printLog (arg: number): number {
+//     return arg;
+// }
+// console.log(printLog(123))    // print: 123
+// console.log(printLog('Bob'))  // 报错提示： 类型“string”的参数不能赋给类型“number”的参数。
+
+// function printLog (arg: any): any {
+//     return arg;
+// }
+// console.log(printLog(123))       // print: 123
+// console.log(printLog('Bob'))     // print: Bob
+
+// function printLog (arg: number | string) {
+//     return ('' + arg) as typeof arg;
+// }
+// console.log(typeof printLog(123))       // print: 123
+// console.log(typeof printLog('Bob'))     // print: Bob
+
+
+// // 语法格式
+// function printLog<T>(arg: T): T {
+//     return arg;
+// }
+// // 方式一：指定类型
+// console.log(printLog<number>(123))       // print: 123
+// console.log(printLog<string>('Bob'))     // print: Bob
+// // 方式二：类型推导
+// console.log(printLog(123))       // print: 123
+// console.log(printLog('Bob'))     // print: Bob
+
+
+// // 亦可定义多个参数
+// function change<T, U>(tuple: [T, U]): [U, T] {
+//     return [tuple[1], tuple[0]]
+// }
+// console.log(change<string, number>(['Bob', 28]))    // print: [ 28, 'Bob' ]
+// console.log(change(['Bob', 28]))                    // print: [ 28, 'Bob' ]
+
+
+
+// 泛型接口
+// interface GenericPrintLogFn {
+//     <T>(arg: T): T;
+// }
+// interface GenericPrintLogFn2<T> {
+//     (arg: T): T;
+// }
+// function printLog<T>(arg: T): T {
+//     return arg;
+// }
+// let myPrintLog: GenericPrintLogFn = printLog;
+// let myPrintLog2: GenericPrintLogFn2<number> = printLog;
+
+// console.log(myPrintLog<number>(123))
+// console.log(myPrintLog2(123))
+
+// class GenericNumber<T> {
+//     zeroValue: T;
+//     add: (x: T, y: T) => T;
+// }
+// let myGenericNumber = new GenericNumber<number>()
+// myGenericNumber.zeroValue = 0;
+// myGenericNumber.add = function(x, y) { return x + y; };
+// console.log(myGenericNumber.add(1, 2))          // print: 3
+
+
+// function printLog<T>(arg: T): T {
+//     console.log(arg.length)
+//     return arg;
+// }
+
+// interface Lengthwise {
+//     length: number;
+// }
+// function printLog<T extends Lengthwise>(arg: T): T {
+//     console.log(arg.length);
+//     return arg;
+// }
+// console.log(printLog<string>('123'))
+
+
+function getProperty<T, K extends keyof T>(obj: T, key: K) {
+    return obj[key];
+}
+
+let x = { a: 1, b: 2, c: 3, d: 4 };
+
+getProperty(x, "a");    // okay
+getProperty(x, "m");    // 提示报错：类型“"m"”的参数不能赋给类型“"a" | "b" | "c" | "d"”的参数。
+
+
+
+// function copyFields<T extends U, U>(target: T, source: U): T {
+//     for (let id in source) {
+//         target[id] = (<T>source)[id];
+//     }
+//     return target;
+// }
+// let y = { a: 1, b: 2, c: 3, d: 4 };
+// copyFields(y, { b: 10, d: 20 });
+
+
+
 
