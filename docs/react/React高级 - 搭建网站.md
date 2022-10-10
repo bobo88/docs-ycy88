@@ -480,7 +480,44 @@ $ yarn add sass node-sass@npm:sass
 // 2. 文件名调整为： 【.scss】
 ```
 
-#### 八、项目完善： todo
+#### 八、路径别名配置
+```js
+// 1. 安装依赖：
+$ yarn add @craco/craco
+
+// 2. 根目录下 新建 craco.config.js
+const path = require('path')
+const pathResolve = (pathUrl) => path.join(__dirname, pathUrl)
+module.exports = {
+  webpack: {
+    // 设置别名
+    alias: {
+      '@': pathResolve('src'),
+      '@assets': pathResolve('src/assets'),
+      '@images': pathResolve('src/assets/image'),
+      '@components': pathResolve('src/components'),
+      '@hooks': pathResolve('src/hooks'),
+      '@pages': pathResolve('src/pages'),
+      '@utils': pathResolve('src/utils')
+    }
+  }
+}
+
+// 3. 配置package.json -- 与“配置多环境”相结合
+"scripts": {
+  "serve": "dotenv -e .env.dev craco start",
+  "dev": "dotenv -e .env.dev craco start",
+  "start": "dotenv -e .env.dev craco start",
+  "build": "dotenv -e .env.prod craco build",
+  "build:dev": "dotenv -e .env.dev craco build",
+  "build:test": "dotenv -e .env.test craco build",
+  "test": "craco test",
+  "eject": "craco eject"
+},
+```
+参考：<a href="https://github.com/dilanx/craco/blob/master/packages/craco/README.md#configuration-overview" target="_blank">Craco</a><br />
+
+#### 九、项目完善： todo
 
 案例源码：<br />
 <a href="https://github.com/bobo88/test-actions" target="_blank">React网站（园博吧）</a><br />
