@@ -68,22 +68,67 @@ componentWillUnmount
 ```
 得出结论：React从v16.3开始废弃 componentWillMount componentWillReceiveProps componentWillUpdate 三个钩子函数（三个带 Will 的）。
 
+#### 四、父子组件生命周期的执行顺序
+以 React 18 为例，结合上面的 新的生命周期 图来分析：
+```js
+// 1. 父子组件初始化
+// Parent 组件： constructor
+// Parent 组件： getDerivedStateFromProps
+// Parent 组件： render
+// Child  组件： constructor
+// Child  组件： getDerivedStateFromProps
+// Child  组件： render
+// Child  组件： componentDidMount
+// Parent 组件： componentDidMount
 
-<!-- 
-    useState 让函数式组件能够使用 state
-    useEffect 让函数式组件可以模拟生命周期方法，并进行副作用操作
-    useReducer 让我们能够更清晰地处理状态数据
-    useContext 可以获取 context 值
+// 2. 子组件修改自身状态 state
+// Child 组件： getDerivedStateFromProps
+// Child 组件： shouldComponentUpdate
+// Child 组件： render
+// Child 组件： getSnapshotBeforeUpdate
+// Child 组件： componentDidUpdate
 
-    useEffect 相当于 class Component 中的 componentDidMount、componentDidUpdate、componentWillUnmount 三个生命周期的综合。
+// 3. 修改父组件中传入子组件的 props
+// Parent 组件： getDerivedStateFromProps
+// Parent 组件： shouldComponentUpdate
+// Parent 组件： render
+// Child  组件： getDerivedStateFromProps
+// Child  组件： shouldComponentUpdate
+// Child  组件： render
+// Child  组件： getSnapshotBeforeUpdate
+// Parent 组件： getSnapshotBeforeUpdate
+// Child  组件： componentDidUpdate
+// Parent 组件： componentDidUpdate
 
+// 4. 卸载子组件
+// Parent 组件： getDerivedStateFromProps
+// Parent 组件： shouldComponentUpdate
+// Parent 组件： render
+// Parent 组件： getSnapshotBeforeUpdate
+// Child  组件： componentWillUnmount
+// Parent 组件： componentDidUpdate
 
-    为什么需要hooks 或者说 hooks解决了什么问题？
+// 5. 重新挂载子组件
+// Parent 组件： getDerivedStateFromProps
+// Parent 组件： shouldComponentUpdate
+// Parent 组件： render
+// Child  组件： constructor
+// Child  组件： getDerivedStateFromProps
+// Child  组件： render
+// Parent 组件： getSnapshotBeforeUpdate
+// Child  组件： componentDidMount
+// Parent 组件： componentDidUpdate
+```
+父子组件生命周期执行顺序总结：
++ 当子组件自身状态改变时，不会对父组件产生副作用的情况下，父组件不会进行更新，即不会触发父组件的生命周期
++ 当父组件中状态发生变化（包括子组件的挂载以及卸载）时，会触发自身对应的生命周期以及子组件的更新
+    + render 以及 render 之前的生命周期，则 父组件先执行
+    + render 以及 render之后的声明周期，则子组件先执行，并且是与父组件交替执行
+    + 当子组件进行卸载时，只会执行自身的 componentWillUnmount 生命周期，不会再触发别的生命周期
 
-    在组件之间复用状态逻辑难
-        自定义hook可以轻松实现state的复用状态。
-    复杂组件变得难以理解
-        高阶组件
-    难以理解的class
-        this的工作机制
- -->
+DEMO验证：<br />
+<a href="http://ycy88.com/other" target="_blank">父子组件生命周期的执行顺序</a><br />
+
+参考：<br />
+<a href="https://juejin.cn/post/6914112105964634119" target="_blank">深入详解React生命周期</a><br />
+
