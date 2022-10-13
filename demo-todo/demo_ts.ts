@@ -743,13 +743,46 @@
 
 // let x = [0, 1, null];
 
-class Animal {}
-class Rhino extends Animal {}
-class Elephant extends Animal {}
-class Snake extends Animal {}
+// class Animal {}
+// class Rhino extends Animal {}
+// class Elephant extends Animal {}
+// class Snake extends Animal {}
 
-let zoo = [new Rhino(), new Elephant(), new Snake()];
-let zoo2: Animal[] = [new Rhino(), new Elephant(), new Snake()];
+// let zoo = [new Rhino(), new Elephant(), new Snake()];
+// let zoo2: Animal[] = [new Rhino(), new Elephant(), new Snake()];
+
+// type Name = {
+//     name: string;
+// };
+// type Age = {
+//     age: number;
+// };
+// type Skill = {
+//     canCode(): boolean;
+//     other: number;
+// }
+// type FrontEndEngineer = Name & Age & Skill;
+
+// function getFrontEndEngineer<T>(user: T): T {
+//     return user;
+// }
+// let bob = getFrontEndEngineer<FrontEndEngineer>({
+//     name: 'Bob',
+//     age: 28,
+//     canCode: () => {
+//         return true
+//     },
+//     other: 10
+// });
+// console.log(bob);           // { name: 'Bob', age: 28, canCode: [Function: canCode], other: 10 }
+
+// type Name = string;
+// type ID = number;
+// type User = Name | ID;
+
+// let bob: User = 'Bob';
+// let bob2: User = 430524;
+// let bob3: User = () => {};  // 不能将类型“() => void”分配给类型“User”。
 
 
 
