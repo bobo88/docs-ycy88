@@ -27,6 +27,7 @@ module.exports = {
     themeConfig: {
         nav: [
             { text: 'Home', link: '/' },
+            { text: '前端工程化', link: '/tools/' },
             { 
                 text: '前端框架系', 
                 items: [
@@ -36,8 +37,7 @@ module.exports = {
                     { text: 'Node 系列', link: '/node/' },
                 ]
             },
-            { text: '技术指南', link: '/tech-list/' },
-            { text: '前端工具', link: '/tools/' },
+            { text: '技术清单', link: '/tech-list/' },
             { text: '算法Leetcode', link: '/leetcode/' },
             { text: '园博吧', link: 'http://ycy88.com' },
         ],
@@ -89,7 +89,7 @@ module.exports = {
             ],
             '/tools/': [
                 {
-                    title: '前端工具',
+                    title: '前端工程化',
                     path: '/tools/',
                     collapsable: false,
                     sidebarDepth: 2,
