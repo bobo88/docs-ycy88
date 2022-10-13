@@ -1,5 +1,22 @@
 const { getChildren } = require('./utils/autoSidebar');
 const BASE_PATH = './docs'
+console.log(666, getChildren(BASE_PATH + '/vue/'))
+
+
+
+/**
+ * [ '/vue/Axios', 'Axios' ],
+  [ '/vue/ElementUI', 'ElementUI' ],
+  [ '/vue/Nuxt', 'Nuxt' ],
+  [ '/vue/Pinia', 'Pinia' ],
+  [ '/vue/Pinia持久化', 'Pinia持久化' ],
+  [ '/vue/VUE-Router路由', 'VUE-Router路由' ],
+  [ '/vue/VUE3与VUE2对比', 'VUE3与VUE2对比' ],
+  [ '/vue/Vuex', 'Vuex' ],
+  [ '/vue/搭建多页面项目', '搭建多页面项目' ],
+  [ '/vue/生命周
+ */
+
 
 module.exports = {
     title: '袁波',
@@ -9,68 +26,86 @@ module.exports = {
     ],
     themeConfig: {
         nav: [
-          { text: 'Home', link: '/' },
-          { text: '算法Leetcode', link: '/leetcode/' },
-          { text: '园博吧', link: 'http://ycy88.com' },
+            { text: 'Home', link: '/' },
+            { 
+                text: '前端框架系', 
+                items: [
+                    { text: 'VUE 系列', link: '/vue/' },
+                    { text: 'React 系列', link: '/react/' },
+                    { text: 'Typescript 系列', link: '/ts/' },
+                    { text: 'Node 系列', link: '/node/' },
+                ]
+            },
+            { text: '技术指南', link: '/tech-list/' },
+            { text: '前端工具', link: '/tools/' },
+            { text: '算法Leetcode', link: '/leetcode/' },
+            { text: '园博吧', link: 'http://ycy88.com' },
         ],
-        sidebar: [
-            {
-                title: 'VUE',
-                path: '/vue/',
-                collapsable: false,
-                sidebarDepth: 2,
-                children: getChildren(BASE_PATH + '/vue/')
-            },
-            {
-                title: 'React', 
-                path: '/react/', 
-                collapsable: false,
-                sidebarDepth: 2,
-                children: getChildren(BASE_PATH + '/react/')
-            },
-            {
-                title: 'Node',   // 必要的
-                path: '/node/',      // 可选的, 标题的跳转链接，应为绝对路径且必须存在
-                collapsable: false, // 可选的, 默认值是 true,
-                sidebarDepth: 2,    // 可选的, 默认值是 1
-                children: getChildren(BASE_PATH + '/node/')
-            },
-            {
-                title: 'Typescript',
-                path: '/ts/',
-                collapsable: false,
-                sidebarDepth: 2,
-                children: getChildren(BASE_PATH + '/ts/')
-            },
-            {
-                title: '技术清单',
-                path: '/tech-list/',
-                collapsable: false,
-                sidebarDepth: 2,
-                children: getChildren(BASE_PATH + '/tech-list/')
-            },
-            {
-                title: '技术片段',
-                path: '/fragment/',
-                collapsable: false,
-                sidebarDepth: 2,
-                children: getChildren(BASE_PATH + '/fragment/')
-            },
-            {
-                title: '工具类',
-                path: '/tools/',
-                collapsable: false,
-                sidebarDepth: 2,
-                children: getChildren(BASE_PATH + '/tools/')
-            },
-            {
-                title: '算法',
-                path: '/leetcode/',      // 可选的, 标题的跳转链接，应为绝对路径且必须存在
-                collapsable: true, // 可选的, 默认值是 true,
-                sidebarDepth: 2,    // 可选的, 默认值是 1
-                children: getChildren(BASE_PATH + '/leetcode/')
-            },
-        ]
+        sidebar: {
+            '/vue/': [
+                {
+                    title: 'VUE系列',
+                    path: '/vue/',
+                    collapsable: false,
+                    sidebarDepth: 2,
+                    children: getChildren(BASE_PATH + '/vue/')
+                },
+            ],
+            '/react/': [
+                {
+                    title: 'React系列',
+                    path: '/react/',
+                    collapsable: false,
+                    sidebarDepth: 2,
+                    children: getChildren(BASE_PATH + '/react/')
+                },
+            ],
+            '/ts/': [
+                {
+                    title: 'Typescript系列',
+                    path: '/ts/',
+                    collapsable: false,
+                    sidebarDepth: 2,
+                    children: getChildren(BASE_PATH + '/ts/')
+                },
+            ],
+            '/node/': [
+                {
+                    title: 'Node系列',
+                    path: '/node/',
+                    collapsable: false,
+                    sidebarDepth: 2,
+                    children: getChildren(BASE_PATH + '/node/')
+                },
+            ],
+            '/tech-list/': [
+                {
+                    title: '技术清单',
+                    path: '/tech-list/',
+                    collapsable: false,
+                    sidebarDepth: 2,
+                    children: getChildren(BASE_PATH + '/tech-list/')
+                },
+            ],
+            '/tools/': [
+                {
+                    title: '前端工具',
+                    path: '/tools/',
+                    collapsable: false,
+                    sidebarDepth: 2,
+                    children: getChildren(BASE_PATH + '/tools/')
+                },
+            ],
+            '/leetcode/': [
+                {
+                    title: '算法Leetcode',
+                    path: '/leetcode/',
+                    collapsable: false,
+                    sidebarDepth: 2,
+                    children: getChildren(BASE_PATH + '/leetcode/')
+                },
+            ],
+        },
     },
     markdown: {
         lineNumbers: true,

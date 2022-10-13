@@ -22,7 +22,7 @@ function getChildren(path, sort = true) {
         let sortList = []
         let nosortList = []
         root.forEach(item=>{
-            if (item.replace(".md","").match(/\d+_/)) {
+            if (item.replace(".md", "").match(/\d+_/)) {
                 sortList.push(item)
             } else {
                 nosortList.push(item)
@@ -39,7 +39,7 @@ function getChildren(path, sort = true) {
         // 返回一个二维数组
         return [
             item.split('.md')[0],
-            splitArr[splitArr.length - 1].split('.md')[0]
+            splitArr[splitArr.length - 1].split('.md')[0].replace(/\d+_/, '')
         ]
     });
 }
