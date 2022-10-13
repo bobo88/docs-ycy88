@@ -50,6 +50,13 @@ module.exports = {
                 children: getChildren(BASE_PATH + '/tech-list/')
             },
             {
+                title: '技术片段',
+                path: '/fragment/',
+                collapsable: false,
+                sidebarDepth: 2,
+                children: getChildren(BASE_PATH + '/fragment/')
+            },
+            {
                 title: '工具类',
                 path: '/tools/',
                 collapsable: false,
