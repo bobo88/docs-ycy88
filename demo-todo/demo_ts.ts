@@ -705,8 +705,34 @@
 
 // var window: Window & typeof globalThis
 // window.foo = 1;     // 提示报错： 类型“Window & typeof globalThis”上不存在属性“foo”。
-(window as any).foo = 1;
+// (window as any).foo = 1;
 
+// interface Animal {
+//     name: string;
+// }
+// interface Cat {
+//     name: string;
+//     run(): void;
+// }
+
+// const animal: Animal = {
+//     name: 'tom'
+// };
+// let tom = animal as Cat;
+
+
+interface Animal {
+    name: string;
+}
+interface Cat {
+    name: string;
+    run(): void;
+}
+
+const animal: Animal = {
+    name: 'tom'
+};
+let tom: Cat = animal;
 
 
 

@@ -61,7 +61,100 @@ window.foo = 1;     // 提示报错： 类型“Window & typeof globalThis”上
 
 // 如果改成类型断言形式，则不会报错
 (window as any).foo = 1;
+```
+将一个变量断言为 any 可以说是解决 TypeScript 中类型问题的最后一个手段。
 
+它极有可能掩盖了真正的类型错误，所以如果不是非常确定，就不要使用 as any。
+
+#### 用途四：将 any 断言为一个具体的类型
+```js
+// ====== 老旧代码 start ======
+function getCacheData(key: string): any {
+    return (window as any).cache[key];
+}
+// ====== 老旧代码  end  ======
+
+interface Cat {
+    name: string;
+    run(): void;
+}
+// 我们在使用老旧代码的时候（如果不能直接修改其本身），但是我们可以将其返回值断言成更精确的类型，而不是any满天飞。
+const tom = getCacheData('tom') as Cat;
+tom.run();
+```
+#### 类型断言的限制
+```html
+1. 联合类型可以被断言为其中一个类型
+2. 父类可以被断言为子类
+3. 任何类型都可以被断言为 any
+4. any 可以被断言为任何类型
+5. 要使得 A 能够被断言为 B，只需要 A 兼容 B 或 B 兼容 A 即可
+<!-- 1~4，都是5的特例 -->
+```
+
+#### 双重断言
+::: danger 双重断言
+除非迫不得已，千万别用双重断言。
+:::
+```js
+interface Cat {
+    run(): void;
+}
+interface Fish {
+    swim(): void;
+}
+// 这种双重断言，那么十有八九是非常错误的，它很可能会导致运行时错误。
+function testCat(cat: Cat) {
+    return (cat as any as Fish);
+}
+```
+
+#### 类型断言 vs 类型声明
+类型声明是比类型断言更加严格的。
+```js
+// ====== 1. 类型断言（下面代码编译时OK）
+interface Animal {
+    name: string;
+}
+interface Cat {
+    name: string;
+    run(): void;
+}
+
+const animal: Animal = {
+    name: 'tom'
+};
+let tom = animal as Cat;
+
+// ====== 2. 类型声明（下面代码编译时报错）
+interface Animal {
+    name: string;
+}
+interface Cat {
+    name: string;
+    run(): void;
+}
+
+const animal: Animal = {
+    name: 'tom'
+};
+let tom: Cat = animal;          // 提示报错： 类型 "Animal" 中缺少属性 "run"，但类型 "Cat" 中需要该属性。
+```
+
+#### 类型断言 vs 泛型
+```js
+// 接上面的例子（老旧代码），增加一个泛型 <T>，可以对 getCacheData 的返回值实现更规范的约束。
+function getCacheData<T>(key: string): T {
+    return (window as any).cache[key];
+}
+
+interface Cat {
+    name: string;
+    run(): void;
+}
+
+const tom = getCacheData<Cat>('tom');
+tom.run();
 ```
 
 
