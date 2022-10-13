@@ -61,7 +61,7 @@ function readDirSync(path, root){
 }
 
 function checkFileType (path) {
-    return path.includes(".md") && !path.includes("README.md")
+    return path.includes(".md") && !path.includes("README.md") && !path.includes("_hidden.md")
 }
 
 function prefixPath (basePath, dirPath) {
