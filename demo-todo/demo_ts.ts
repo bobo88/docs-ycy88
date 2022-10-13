@@ -721,20 +721,35 @@
 // let tom = animal as Cat;
 
 
-interface Animal {
-    name: string;
-}
-interface Cat {
-    name: string;
-    run(): void;
-}
+// interface Animal {
+//     name: string;
+// }
+// interface Cat {
+//     name: string;
+//     run(): void;
+// }
 
-const animal: Animal = {
-    name: 'tom'
-};
-let tom: Cat = animal;
+// const animal: Animal = {
+//     name: 'tom'
+// };
+// let tom: Cat = animal;
 
+// let bob = 'Bob';
+// bob = 28;       // 提示报错：不能将类型“number”分配给类型“string”。
 
+// let myLove;
+// myLove = 'myLove';
+// myLove = 28;
+
+// let x = [0, 1, null];
+
+class Animal {}
+class Rhino extends Animal {}
+class Elephant extends Animal {}
+class Snake extends Animal {}
+
+let zoo = [new Rhino(), new Elephant(), new Snake()];
+let zoo2: Animal[] = [new Rhino(), new Elephant(), new Snake()];
 
 
 
