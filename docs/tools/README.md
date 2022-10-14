@@ -4,7 +4,4 @@
 :::
 
 
-![An image](~@/webpack.png)
-![An image](~@/nginx.png)
-![An image](~@/rollup.png)
-![An image](~@/gulp.png)
+![An image](~@/tools.png)

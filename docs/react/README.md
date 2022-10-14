@@ -3,4 +3,4 @@
 React专题
 :::
 
-![An image](~@/react.png)
+![An image](~@/react.jpeg)
