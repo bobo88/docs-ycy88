@@ -120,4 +120,4 @@ vue3:
 ### 五、其他
 
 
-![An image](~@/vue3VSvue2.png)
+![An image](~@/prev/vue3VSvue2.png)

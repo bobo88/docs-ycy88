@@ -16,7 +16,7 @@ $ node -v      // print: v16.14.0
 $ npm -v       // print: 8.3.1
 ```
 
-![An image](~@/node_helloworld.png)
+![An image](~@/prev/node_helloworld.png)
 
 ### 二、搭建一个web服务器：
 你已经安装了 Node，让我们尝试构建第一个 Web 服务器。 
@@ -47,7 +47,7 @@ $ node app.js
 ### 三、备注：
 我配置了三个web服务器，运行在node环境中，使用Nginx进行代理，用来测试「负载均衡」功能。
 
-![An image](~@/node_nginx.png)
+![An image](~@/prev/node_nginx.png)
 <!-- HTTP 是 Node.js 中的一等公民，设计时考虑到了流式和低延迟，这使得 Node.js 非常适合作为网络库或框架的基础。 -->
 
 DEMO源码：<br />

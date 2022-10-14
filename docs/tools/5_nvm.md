@@ -35,7 +35,7 @@ nvm use node
 将多个node不同的版本下载到电脑本地，【nvm use v16.16.0】就是将电脑中的node环境变量更改为16.16.0的。<br/>
 原理就是：下载多个node版本，然后更改电脑的node环境变量
 :::
-![nvm image](~@/nvm.png)
+![nvm image](~@/prev/nvm.png)
 
 参考文档（下载并安装指南，适用于 macOS/windows）：<br/>
 <a href="https://github.com/nvm-sh/nvm" target="_blank">nvm (Github)</a><br />

@@ -113,7 +113,7 @@ persist: {
 ```
 
 ### 二、Pinia源码简析：
-![An image](~@/pinia.png)
+![An image](~@/prev/pinia.png)
 
 
 

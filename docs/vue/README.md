@@ -14,4 +14,4 @@ VUE专题
 5. 我要怎么用它？需要注意什么地方？
 :::
 
-![An image](~@/vue.png)
+![An image](~@/prev/vue.png)

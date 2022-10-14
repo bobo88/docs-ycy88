@@ -29,12 +29,12 @@ PR（Pull Request）：相关概念Fork
 :::
 
 Todo待完成 git团队合作
-![An image](~@/gitpr.png)
+![An image](~@/prev/gitpr.png)
 
 ::: warning 
 测试引入图片功能
 :::
-<!-- ![An image](~@/beauty_1.png) -->
-![An image](~@/beauty_4.png)
+<!-- ![An image](~@/prev/beauty_1.png) -->
+![An image](~@/prev/beauty_4.png)
 
 

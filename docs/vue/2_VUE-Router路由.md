@@ -20,7 +20,7 @@ $ npm install vue-router@4
 $ yarn add vue-router@4
 ```
 ### 二、一图走天下
-![An image](~@/vue_router.png)
+![An image](~@/prev/vue_router.png)
 
 
 

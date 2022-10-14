@@ -40,8 +40,8 @@ $ yarn create nuxt-app <项目名>
 
 ```
 
-<!-- <img src="~@/nuxt_1.png"> -->
-![An image](~@/nuxt_1.png)
+<!-- <img src="~@/prev/nuxt_1.png"> -->
+![An image](~@/prev/nuxt_1.png)
 
 ### 二、常见命令
 ```js
@@ -66,7 +66,7 @@ nuxt generate	// 编译应用，并依据路由配置生成对应的 HTML 文件
 		+ 这时候打开的也是 localhost:3000
 		+ 我们需要使用【nginx】做代理 ==> www.abc.com
 
-![An image](~@/nuxt_2.png)
+![An image](~@/prev/nuxt_2.png)
 
 
 案例源码：<br />

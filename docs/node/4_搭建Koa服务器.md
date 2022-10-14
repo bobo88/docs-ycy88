@@ -21,7 +21,7 @@ npm install
 npm run dev
 ```
 出现如图所示，则表示项目初始化OK：
-![An image](~@/hello_koa.png)
+![An image](~@/prev/hello_koa.png)
 
 ::: warning 注意
 本项目 DEMO 基于koa2，也就是说运行的命令是「 koa2 -e koa2-project 」。
@@ -274,11 +274,11 @@ router.post('/logout', async function (ctx, next) {
 
 module.exports = router
 ```
-![An image](~@/koa_postman.png)
+![An image](~@/prev/koa_postman.png)
 
 如果没有传递完整的字段值：
 
-![An image](~@/koa_postman2.png)
+![An image](~@/prev/koa_postman2.png)
 
 
 DEMO源码：<br />

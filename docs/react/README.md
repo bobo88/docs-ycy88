@@ -14,4 +14,4 @@ React专题
 5. 我要怎么用它？需要注意什么地方？
 :::
 
-![An image](~@/react.jpeg)
+![An image](~@/prev/react.jpeg)
