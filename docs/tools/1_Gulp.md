@@ -1,10 +1,10 @@
-### Gulp
+## Gulp
 ::: tip Gulp的概念
 自动化构建工具，增强你的工作流程！<br />
 关键词：”管道流“
 :::
 
-#### 一、Gulp 初始化：
+### 一、Gulp 初始化：
 ```js
 npm install gulp-cli -g
 npm install gulp -D
@@ -47,7 +47,7 @@ exports.default = parallel(html, css, js);
 :::
 
 
-#### 二、Gulp详细操作流程：
+### 二、Gulp详细操作流程：
 + 首先你要先在本地安装nodejs，“傻瓜式”安装即可，一路点击下一步
 ```js
 node -v  // 查看安装的nodejs版本，出现版本号，说明已经正确安装
@@ -77,7 +77,7 @@ npm install gulp-less --save-dev
 ``` 
 
 
-#### 三、Gulp常用插件：
+### 三、Gulp常用插件：
 ```js
 // gulp-less：处理less预编译文件
 // gulp-minify-css：css文件压缩
@@ -91,7 +91,7 @@ npm install gulp-less --save-dev
 // gulp-htmlmin：压缩HTML
 // gulp-babel/babel-core/babel-preset-es2015：用于解析ES6转换为ES5
 ```
-#### 四、Gulp常用API：
+### 四、Gulp常用API：
 ```js
 // src()：创建一个流，用于从文件系统读取 Vinyl 对象。
 // dest()：创建一个用于将 Vinyl 对象写入到文件系统的流。

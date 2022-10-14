@@ -1,4 +1,4 @@
-### 初探React
+## 初探React
 ::: tip React概念
 用于构建用户界面的 JavaScript 库，特点：声明式 / 组件化 / 跨平台。
 :::
@@ -13,14 +13,14 @@ React是由Facebook在2013年开源的Javascript库。
 JSX语法，最终会被编译为 createElement() 方法
 :::
 
-#### 一、React发展史
+###  一、React发展史
 ```html
 1. createClass 创建组件时期：React 15.5版本开始官方不再推荐，React 16版本彻底放弃（2017年9月）；
 2. Class 声明组件时期
 3. 无状态函数式组件 + React Hooks时期：React 16.8推出Hooks概念（2019年2月）。
 ```
 
-#### 二、React全家桶
+###  二、React全家桶
 + react: 整体架构，类似【vue】
 + redux || mobx: 状态管理，类似【vuex】
 + react-router: 路由，类似【vue-router】

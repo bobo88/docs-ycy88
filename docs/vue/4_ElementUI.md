@@ -1,4 +1,4 @@
-### VUE全家桶之ElementUI
+## VUE全家桶之ElementUI
 ::: tip 概念
 Element，一套为开发者、设计师和产品经理准备的桌面端组件库，包含各种常用场景的组件以及国际化多语言的配置等。<br/>
 主要基于VUE 2（Element） 和 VUE 3（Element Plus）。
@@ -11,7 +11,7 @@ React相关的组件库有 <a href="https://ant.design/index-cn" target="_blank"
 VUE相关的移动端组件库有 <a href="https://vant-contrib.gitee.io/vant/#/zh-CN/home" target="_blank">Vant</a>。
 </p>
 
-#### 一、Element的安装和使用：
+### 一、Element的安装和使用：
 ```js
 // 1. 安装
 $ npm i element-ui -S

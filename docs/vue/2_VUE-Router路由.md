@@ -1,4 +1,4 @@
-### VUE全家桶之VUE-Router路由
+## VUE全家桶之VUE-Router路由
 ::: tip
 Vue.js 的官方路由
 :::
@@ -13,13 +13,13 @@ Vue Router的几个特点：
 
 本文档介绍 VUE 3 配套的Vue Router。
 
-#### 一、安装
+### 一、安装
 ```js
 $ npm install vue-router@4
 // OR
 $ yarn add vue-router@4
 ```
-#### 二、一图走天下
+### 二、一图走天下
 ![An image](~@/vue_router.png)
 
 

@@ -1,6 +1,6 @@
-### Node清单 - 搭建Koa服务器
+## Node清单 - 搭建Koa服务器
 
-#### 一、使用脚手架初始化项目
+### 一、使用脚手架初始化项目
 ::: tip 脚手架
 koa-generator 是一个Koa的脚手架工具。
 :::
@@ -27,7 +27,7 @@ npm run dev
 本项目 DEMO 基于koa2，也就是说运行的命令是「 koa2 -e koa2-project 」。
 :::
 
-#### 二、优化配置：
+### 二、优化配置：
 ```js
 // ====== 项目初始化配置目录
 bin             
@@ -218,7 +218,7 @@ module.exports = {
 }
 ```
 
-#### 三、完善请求路由（以 /login 为例）：
+### 三、完善请求路由（以 /login 为例）：
 ::: danger 注意
 /users/login 以 mock 模拟方式处理，可以通过 Postman 来验证模拟的请求结果。
 :::

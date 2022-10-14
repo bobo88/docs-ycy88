@@ -1,17 +1,17 @@
-### VUE全家桶之Vuex
+## VUE全家桶之Vuex
 ::: tip Vuex
 官方定义：Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。<br/>
 它采用集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。
 :::
 
-#### 核心概念
+### 核心概念
 + State
 + Getter
 + Mutation
 + Action
 + Module
 
-#### 核心概念：State
+### 核心概念：State
 Vuex的状态存储是响应式的
 ```js
 const app = new Vue({
@@ -62,7 +62,7 @@ computed: mapState([
 ])
 ```
 
-#### 核心概念：Getter
+### 核心概念：Getter
 存在背景：我们需要从 store 中的 state 中派生出一些状态时就需要使用到它，Vuex 允许我们在 store 中定义“getter”（可以认为是 store 的计算属性）。
 
 如何使用：Getter 接受 state 作为其第一个参数，Getter 会暴露为 store.getters 对象。
@@ -79,7 +79,7 @@ mapGetters({
 })
 ```
 
-#### 核心概念：Mutation
+### 核心概念：Mutation
 ::: warning 注意
 1、更改 Vuex 的 store 中的状态的唯一方法是提交 mutation<br/>
 2、使用常量替代 Mutation 事件类型<br/>
@@ -104,7 +104,7 @@ mutations: {
 mapMutations 辅助函数: 将组件中的 methods 映射为 store.commit 调用（需要在根节点注入 store）
 
 
-#### 核心概念：Action
+### 核心概念：Action
 ::: warning 注意
 Action 类似于 mutation。不同在于：<br/>
 1、Action 提交的是 mutation，而不是直接变更状态。<br/>
@@ -131,7 +131,7 @@ context 对象不是 store 实例本身！！！
 组合 Action：利用Promise
 + 一个 store.dispatch 在不同模块中可以触发多个 action 函数。在这种情况下，只有当所有触发函数完成后，返回的 Promise 才会执行。
 
-#### 核心概念：Module
+### 核心概念：Module
 Vuex 允许我们将 store 分割成模块（module）
 ```js
 const moduleA = {
@@ -175,7 +175,7 @@ const moduleA = {
 命名空间: todo
 
 
-#### Vuex: 插件
+### Vuex: 插件
 插件本质： 就是一个函数，接受store作为唯一参数。
 ```js
 // 定义：
@@ -194,12 +194,12 @@ const store = new Vuex.Store({
 })
 ```
 
-#### Vuex: 测试
+### Vuex: 测试
 一般针对mutation和action进行单元测试
 
 测试插件：Mocha + Chai 、Karma + karma-webpack 
 
-#### Vuex: 热重载
+### Vuex: 热重载
 作用：就是webpack的热重载功能，提高开发效率。
 + 1、比如配置的mutations的热重载，添加新的mutations方法时就不会刷新页面，而是加载一段新的js。
 + 2、比如修改getters、mutations或者actions里面的数据或者方法时，都能自动更新，而不需要手动刷新页面后才能看到更改代码后的效果。

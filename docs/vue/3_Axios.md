@@ -1,9 +1,9 @@
-### VUE全家桶之Axios
+## VUE全家桶之Axios
 ::: tip 概念
 Axios 是一个基于 promise 网络请求库，作用于node.js 和浏览器中。
 :::
 
-#### 特性
+### 特性
 + 从浏览器创建 XMLHttpRequests 
 + 从 node.js 创建 http 请求
 + 支持 Promise API
@@ -13,7 +13,7 @@ Axios 是一个基于 promise 网络请求库，作用于node.js 和浏览器中
 + 自动转换JSON数据
 + 客户端支持防御XSRF
 
-#### 使用步骤：
+### 使用步骤：
 ```js
 // 1. 安装
 $ yarn add axios

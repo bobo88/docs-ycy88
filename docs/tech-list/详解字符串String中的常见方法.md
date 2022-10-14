@@ -1,4 +1,4 @@
-### 详解字符串String中的常见方法
+## 详解字符串String中的常见方法
 
 
 *字符串String中的方法比较多，我将其中的常见方法进行大致归类，详情请参考下文：*
@@ -9,7 +9,7 @@
 let str = '12Abc34'
 let str2 = ' 12Abc34 '
 ```
-#### 一、关于返回指定位置的字符
+### 一、关于返回指定位置的字符
 ```js
 // - charAt : 
 //    - 作用： 返回指定位置的字符
@@ -24,7 +24,7 @@ console.log(str.charAt(2))      // A
 console.log(str.charCodeAt(2))  // 65
 ```
 
-#### 二、关于字符串补全
+### 二、关于字符串补全
 ```js
 // - padStart :
 //    - 作用： 用于头部补全
@@ -49,7 +49,7 @@ console.log(str.padEnd(9, 'Y'))    // 12Abc34YY
 console.log(str.repeat(2))         // 12Abc3412Abc34
 ```
 
-#### 三、关于正则匹配
+### 三、关于正则匹配
 ```js
 // - match :
 //    - 作用： 检索返回一个字符串匹配正则表达式的结果
@@ -94,7 +94,7 @@ console.log('12AAAbc34'.replaceAll('A', '*')) // 12***bc34
 console.log(str.search('A'))                  // 2
 ```
 
-#### 四、关于字符串截取与拼接
+### 四、关于字符串截取与拼接
 ```js
 // - split :
 //    - 作用： 使用指定的分隔符字符串将一个String对象分割成子字符串数组，以一个指定的分割字串来决定每个拆分的位置
@@ -137,7 +137,7 @@ console.log(str.concat('x', 'y', 'z'))   // 12Abc34xyz
 console.log(str.substr(2, 3))            // Abc
 ```
 
-#### 五、关于字符串搜索
+### 五、关于字符串搜索
 ```js
 // - indexOf :
 //    - 作用： 方法返回调用它的 String 对象中第一次出现的指定值的索引，从 fromIndex 处进行搜索。如果未找到该值，则返回 -1
@@ -181,7 +181,7 @@ console.log(str.endsWith('A'))                   // false
 console.log(str.endsWith('A', 3))                // true
 ```
 
-#### 六、关于字符串大小写 & 移除前后空白
+### 六、关于字符串大小写 & 移除前后空白
 ```js
 // // 大小写相关
 // toLocaleLowerCase: ƒ toLocaleLowerCase()

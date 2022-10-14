@@ -1,10 +1,10 @@
-### VUE全家桶之Pinia持久化
+## VUE全家桶之Pinia持久化
 ::: tip 概念
 Pinia 是一个用于 Vue 的状态管理库，是 Vue 的另一种状态管理方案，但刷新页面会丢失更新后的状态。<br/>
 所以需要一个插件来实现数据持久化 「pinia-plugin-persist」
 :::
 
-#### 一、使用步骤：
+### 一、使用步骤：
 + 安装:
 ```js
 $ yarn add pinia-plugin-persist
@@ -46,7 +46,7 @@ actions:{......},
   }
 ```
 
-#### 源码分析（pinia-plugin-persist/src/index.ts）：
+### 源码分析（pinia-plugin-persist/src/index.ts）：
 ```js
 // 开启缓存：
 if (options.persist?.enabled) {}

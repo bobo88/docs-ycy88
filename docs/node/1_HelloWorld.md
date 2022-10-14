@@ -1,4 +1,4 @@
-### Node清单 - HelloWorld
+## Node清单 - HelloWorld
 Node.js® 是一个开源、跨平台的 JavaScript 运行时环境。 用于方便地搭建响应速度快、易于扩展的网络应用。
 
 Node.js 它不是一个js文件，而是对Chrome V8引擎进行封装的一个运行环境，它可以使Javascript代码运行在服务端，使其实现和PHP、Java等服务端语言类似的功能。
@@ -6,7 +6,7 @@ Node.js 它不是一个js文件，而是对Chrome V8引擎进行封装的一个�
 包含关系。Node.js内置了npm， npm 全称是node package manager（包管理工具）。
 :::
 
-#### 一、Node的安装：
+### 一、Node的安装：
 1. 从 <a href="https://nodejs.org/zh-cn/download/" target="_blank">官网</a> 直接下载 Node 的安装包，然后一路next安装即可。
 2. 验证Node是否安装成功：
 ```js
@@ -18,7 +18,7 @@ $ npm -v       // print: 8.3.1
 
 ![An image](~@/node_helloworld.png)
 
-#### 二、搭建一个web服务器：
+### 二、搭建一个web服务器：
 你已经安装了 Node，让我们尝试构建第一个 Web 服务器。 
 ```js
 // 1. 编写一个 app.js
@@ -44,7 +44,7 @@ $ node app.js
 ```
 
 
-#### 三、备注：
+### 三、备注：
 我配置了三个web服务器，运行在node环境中，使用Nginx进行代理，用来测试「负载均衡」功能。
 
 ![An image](~@/node_nginx.png)

@@ -1,4 +1,4 @@
-### TS序章 - 第一个HelloWorld
+## TS序章 - 第一个HelloWorld
 
 安装Typescript：
 ```js

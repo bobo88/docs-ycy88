@@ -1,9 +1,9 @@
-### Typescript实战 - 配置tsconfig
+## Typescript实战 - 配置tsconfig
 ::: tip 配置tsconfig
 ts.config.js 的详细配置信息以及相关注释。
 :::
 
-#### 一、生成 ts.config.js
+### 一、生成 ts.config.js
 ```js
 // 1. 全局安装 Typescript
 $ npm i -g typescript
@@ -12,7 +12,7 @@ $ npm i -g typescript
 $ tsc --init
 ```
 
-#### 二、配置 ts.config.js
+### 二、配置 ts.config.js
 ```js
 {
   "compilerOptions": {

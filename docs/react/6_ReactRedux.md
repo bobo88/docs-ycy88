@@ -1,4 +1,4 @@
-### React清单 - React Redux
+## React清单 - React Redux
 ::: warning Redux
 Redux 是 JavaScript 应用程序的状态容器，提供可预测的状态管理。Redux 和 React 之间没有关系。Redux 支持 React、Angular、Ember、jQuery 甚至纯 JavaScript。
 :::
@@ -11,7 +11,7 @@ Redux 的官方 React 绑定， Official React bindings for Redux。<br/>
 :::
 
 本文将简单介绍「React Redux」的使用方法。
-#### 一、React Redux 安装使用 和 redux-persist 持久化：
+###  一、React Redux 安装使用 和 redux-persist 持久化：
 第一步： 安装依赖 并 配置编写 store 相关文件
 ```js
 // 1. 安装依赖： 
@@ -133,7 +133,7 @@ function App() {
 export default App;
 ```
 
-#### 二、其他
+###  二、其他
 ```js
 // todo ...
 ```

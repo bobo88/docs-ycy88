@@ -1,9 +1,9 @@
-### VUE全家桶之Pinia
+## VUE全家桶之Pinia
 ::: tip 概念
 Pinia 是一个用于 Vue 的状态管理库，类似 Vuex, 是 Vue 的另一种状态管理方案
 :::
 
-#### 一、使用步骤：
+### 一、使用步骤：
 + 安装:
 ```js
 yarn add pinia@next
@@ -112,7 +112,7 @@ persist: {
 }
 ```
 
-#### 二、Pinia源码简析：
+### 二、Pinia源码简析：
 ![An image](~@/pinia.png)
 
 

@@ -1,9 +1,9 @@
-### VUE全家桶之Nuxt
+## VUE全家桶之Nuxt
 ::: tip 概念
 Nuxt.js 是一个基于 Vue.js 的通用应用框架，旨在让「服务端渲染SSR」或 「生成静态站点」开发更简单。
 :::
 
-#### 特性
+### 特性
 + 基于 Vue.js
 + 自动代码分层
 + 服务端渲染
@@ -17,7 +17,7 @@ Nuxt.js 是一个基于 Vue.js 的通用应用框架，旨在让「服务端渲�
 + 支持各种样式预处理器： SASS、LESS、 Stylus 等等
 + 支持 HTTP/2 推送
 
-#### 一、安装和使用
+### 一、安装和使用
 ```js
 // Nuxt.js 十分简单易用。一个简单的项目只需将 nuxt 添加为依赖组件即可。
 // 1. 安装 （Nuxt.js团队创建了脚手架工具：create-nuxt-app）
@@ -43,7 +43,7 @@ $ yarn create nuxt-app <项目名>
 <!-- <img src="~@/nuxt_1.png"> -->
 ![An image](~@/nuxt_1.png)
 
-#### 二、常见命令
+### 二、常见命令
 ```js
 nuxt	        // 启动一个热加载的 Web 服务器（开发模式） localhost:3000。
 nuxt build	    // 利用 webpack 编译应用，压缩 JS 和 CSS 资源（发布用）。
@@ -53,7 +53,7 @@ nuxt generate	// 编译应用，并依据路由配置生成对应的 HTML 文件
 // Nuxt.js集成了：Vue / Vue-router / Vuex / Vue服务端渲染 / Vue-meta
 ```
 
-#### 三、项目部署
+### 三、项目部署
 + 打包上线
 	1. 执行： npm run build
 	2. 将打包好的文件部署到服务器的某个文件夹中，并在服务器安装node环境

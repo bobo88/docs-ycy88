@@ -1,13 +1,13 @@
-### Node清单 - 初探Node
+## Node清单 - 初探Node
 Node.js 不是一门语言也不是框架，它只是基于 Google V8 引擎的 JavaScript 运行时环境
 
-#### 一、Nodejs特点：
+### 一、Nodejs特点：
 + 异步IO
 + 事件驱动
 + 单线程
 + ......
 
-#### 二、Node.js的主要使用场景:
+### 二、Node.js的主要使用场景:
 + 跨平台:
   + 前端（web + H5）
   + 移动端（Hybrid) / cordova / react-native / weex
@@ -28,7 +28,7 @@ Node.js 不是一门语言也不是框架，它只是基于 Google V8 引擎的 
   + webpack / gulp / 工程化
   + hack技巧 / npm 等
 
-#### 三、Node.js核心模块/API
+### 三、Node.js核心模块/API
 ```html
 <!-- // ====== 1. 核心模块 -->
 global：        全局变量
@@ -84,7 +84,7 @@ domain：    域
 punycode：  域名代码
 ```
 
-#### 四、Node.js相关的主流框架
+### 四、Node.js相关的主流框架
 ```js
 // 1. Express
 // 2. Koa

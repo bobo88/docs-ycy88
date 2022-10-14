@@ -1,4 +1,4 @@
-### React清单 - JSX
+## React清单 - JSX
 ::: tip JSX
 JSX的全称是 Javascript and XML，React率先使用JSX，它是一种可以在JS中编写XML的语言。VUE中也支持JSX写法。
 :::
@@ -20,7 +20,7 @@ JSX的全称是 Javascript and XML，React率先使用JSX，它是一种可以�
 备注：编写JSX内容时，用括号（）将内容包裹起来
 ```
 
-#### JSX是JS的语法糖
+###  JSX是JS的语法糖
 ::: tip 深入 JSX
 实际上，JSX 仅仅只是 React.createElement(component, props, ...children) 函数的语法糖。
 :::
@@ -42,7 +42,7 @@ const element = React.createElement(
 );
 ```
 
-#### JSX 中的 Props
+###  JSX 中的 Props
 有多种方式可以在 JSX 中指定 props。
 ```jsx
 // 1. JavaScript 表达式作为 Props

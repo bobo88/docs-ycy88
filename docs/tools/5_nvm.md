@@ -1,4 +1,4 @@
-### nvm
+## nvm
 ::: tip nvm
 顾名思义，Node Version Manager (NVM) 是一种用于管理设备上的 Node 版本的工具。
 :::
@@ -10,7 +10,7 @@
 
 例如，如果您将10.0.0的 Node 版本用于使用12.0.0的项目，您可能会遇到一些错误。如果您使用 npm 将 Node 版本更新为12.0.0，并将其用于使用10.0.0的项目，您可能无法获得预期的体验。
 
-#### nvm常见命令
+### nvm常见命令
 ```js
 nvm ls-remote               // 查看 Node 远程版本库
 nvm install node            // 将安装最新版本的 Node
@@ -30,7 +30,7 @@ nvm use 14.15.4
 nvm use node
 ```
 
-#### nvm的工作原理
+### nvm的工作原理
 ::: tip nvm的工作原理
 将多个node不同的版本下载到电脑本地，【nvm use v16.16.0】就是将电脑中的node环境变量更改为16.16.0的。<br/>
 原理就是：下载多个node版本，然后更改电脑的node环境变量
