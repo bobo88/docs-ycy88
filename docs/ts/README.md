@@ -15,4 +15,5 @@ $ npm i -g typescript
 $ npm i -g ts-node
 // 2. 运行TS文件： ts-node **.ts
 ```
+![An image](~@/ts.jpg)
 
