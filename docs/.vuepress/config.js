@@ -1,22 +1,5 @@
 const { getChildren } = require('./utils/autoSidebar');
 const BASE_PATH = './docs'
-console.log(666, getChildren(BASE_PATH + '/vue/'))
-
-
-
-/**
- * [ '/vue/Axios', 'Axios' ],
-  [ '/vue/ElementUI', 'ElementUI' ],
-  [ '/vue/Nuxt', 'Nuxt' ],
-  [ '/vue/Pinia', 'Pinia' ],
-  [ '/vue/Pinia持久化', 'Pinia持久化' ],
-  [ '/vue/VUE-Router路由', 'VUE-Router路由' ],
-  [ '/vue/VUE3与VUE2对比', 'VUE3与VUE2对比' ],
-  [ '/vue/Vuex', 'Vuex' ],
-  [ '/vue/搭建多页面项目', '搭建多页面项目' ],
-  [ '/vue/生命周
- */
-
 
 module.exports = {
     title: '袁波',
