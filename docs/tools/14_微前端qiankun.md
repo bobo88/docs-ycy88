@@ -296,42 +296,270 @@ export async function update(props) {
   </div>
 </template>
 ```
-DEMO源码：<a href="https://github.com/bobo88/project-basis/tree/main/qiankun-basis" target="_blank">「qiankun」DEMO</a><br />
+![An image](~@/tools/qiankun_demo.png)
 
 ### 四、DEMO验证
 ```js
 // 1、样式隔离
 // 2、JS沙箱
 // 3、预加载
+// 4、跨域问题
+// 5、应用间通信
+```
+#### 1、样式隔离
+解决方案： 「 postcss-selector-namesapce 」 设置别名 （或者 postcss-prefix-selector 插件）
+
+```jsx
+// 1. 安装 postcss-selector-namespace
+$ npm i postcss-selector-namespace -D
+// OR
+$ yarn add postcss-selector-namespace -D
+
+// 2. 使用 （在子应用项目 里面新建 postcss.config.js， 在项目根目录下）
+// postcss.config.js
+module.exports = {
+  plugins: {
+    'postcss-selector-namespace': {
+      namespace(css) {
+        return '.vueApp-space'
+      }
+    }
+  }
+}
+
+// 3. 在 micro-vue/index.html 里面新增「配置的别名 .vueApp-space」
+<div id="app" class="vueApp-space"></div>
+
+// 4. 过滤掉不想被添加「别名前缀」的样式文件可以按照下面的方法进行配置
+module.exports = {
+  plugins: {
+    'postcss-selector-namespace': {
+      namespace(css) {
+          if (
+            // 不想被添加「别名前缀」 的样式文件，可以在这里过滤掉
+            css.includes('demo.scss')
+          ) {
+            return ''
+          }
+          return '.vueapp-space'
+      }
+    }
+  }
+}
+
+// 备注：或者使用qiankun自带的样式沙箱隔离方案。
+// 在「基座项目」配置中调整为以下代码
+start({ sandbox : { experimentalStyleIsolation: true } });
+// strictStyleIsolation: true       // 严格沙箱
+// experimentalStyleIsolation: true // 实验性沙箱
+// 缺点：子应用的弹窗、抽屉、popover因插入到了「基座应用」的body，所以导致样式丢失或应用了「基座应用」的样式
+```
+```css
+/* 使用qiankun自带的样式沙箱隔离方案会生成如下代码 */
+div[data-qiankun="vueApp"] .common-blue {
+  color: green;
+}
+```
+![An image](~@/tools/qiankun_demo2.png)
+::: warning 注意：样式丢失问题
+子应用的弹窗、抽屉、popover因插入到了「基座应用」的body导致样式丢失或应用了「基座应用」的样式。
+
+处理的思路可以从两个点思考：
+1. 样式内置：行内样式（也称内联样式），或者组件中插入「style」内部样式
+2. 增加别名前缀：给子应用的弹窗等的最外层DIV增加一个「别名前缀」，和「postcss-selector-namespace」中的配置保持一致
+:::
+
+::: details 样式内置（相关代码）
+```vue
+<template>
+  <div id="nav">
+    我来自子应用
+    <p class="common-blue">子应用 use common-blue 的标签</p>
+    <p class="common-yellow">子应用 Modify common-yellow 的标签</p>
+
+    <button v-if="mainBox" @click="showTc">点击我显示弹窗</button>
+  </div>
+</template>
+
+<script setup>
+  const mainBox = document.getElementById('base-app');
+  const showTc = () => {
+    let popUpBox = document.createElement('div');
+    let htmlCont = `
+      <style>
+        .pop-up {
+          width: 100%;
+          height: 100%;
+          position: fixed;
+          top: 0;
+          left: 0;
+          z-index: 99;
+          color: #fff;
+          text-align: center;
+          background: rgba(0, 0, 0, 0.85);
+        }
+        .pop-up-cont {
+          position: absolute;
+          width: 200px;
+          height: 200px;
+          margin: auto;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          border: 1px solid #fff;
+          border-radius: 10px;
+        }
+        .pop-up-tit {
+          color: #f00;
+        }
+        .pop-up-desc {
+          color: grey;
+        }
+      </style>
+      <div class="pop-up" id="pop-up-box">
+        <div class="pop-up-cont">
+          <h3 class="pop-up-tit">我是自定义弹窗</h3>
+          <p class="pop-up-desc">一些奇奇怪怪的描述</p>
+        </div>
+      </div>
+    `;
+    popUpBox.innerHTML = htmlCont;
+    mainBox.appendChild(popUpBox);
+  }
+</script>
+```
+:::
+
+::: details 增加别名前缀（相关代码）
+```vue
+<template>
+  <div id="nav">
+    我来自子应用
+    <p class="common-blue">子应用 use common-blue 的标签</p>
+    <p class="common-yellow">子应用 Modify common-yellow 的标签</p>
+
+    <button v-if="mainBox" @click="showTc" style="margin-right:20px;">点击我显示弹窗（样式内置）</button>
+    <button v-if="mainBox" @click="showTc2">点击我显示弹窗（添加前缀）</button>
+  </div>
+</template>
+
+<script setup>
+  const mainBox = document.getElementById('base-app');
+  const showTc = () => {
+    // ...
+  };
+  const showTc2 = () => {
+    let popUpBox = document.createElement('div');
+    let htmlCont = `
+      <div class="pop-up" id="pop-up-box">
+        <div class="pop-up-cont">
+          <h3 class="pop-up-tit">我是自定义弹窗</h3>
+          <p class="pop-up-desc">一些奇奇怪怪的描述</p>
+        </div>
+      </div>
+    `;
+    // 增加别名前缀
+    popUpBox.setAttribute('class', 'vueapp-space');
+    popUpBox.innerHTML = htmlCont;
+    mainBox.appendChild(popUpBox);
+  }
+</script>
+```
+
+<p>配置 vueapp.scss:</p>
+
+```scss
+.pop-up {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  color: #fff;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.85);
+  .pop-up-cont {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px solid #fff;
+    border-radius: 10px;
+  }
+  .pop-up-tit {
+    color: #f00;
+  }
+  .pop-up-desc {
+    color: grey;
+  }
+}
+```
+:::
+
+![An image](~@/tools/qiankun_demo3.png)
+
+
+#### 2、JS沙箱
+TODO...
+```js
+legacySandBox   // 基于 Proxy API 来实现
+proxySandBox    // 基于 Proxy API 来实现
+snapshotSandBox // 不支持 Proxy API 的低版本浏览器中，会降级为 snapshotSandBox
 ```
 
 
+#### 3、预加载
+```js
+/**
+ * prefetch - boolean | 'all' | string[] | (( apps: RegistrableApp[] ) => { criticalAppNames: string[]; minorAppsName: string[] }) - 可选，是否开启预加载，默认为 true。
+ * 配置为 true 则会在第一个微应用 mount 完成后开始预加载其他微应用的静态资源
+ * 配置为 'all' 则主应用 start 后即开始预加载所有微应用静态资源
+ * 配置为 string[] 则会在第一个微应用 mounted 后开始加载数组内的微应用资源
+ * 配置为 function 则可完全自定义应用的资源加载时机 (首屏应用及次屏应用)
+*/
+
+start({
+  prefetch: 'all'
+});
+```
+
+#### 4、跨域问题
+由于 qiankun 是通过 fetch 去获取子应用注册时配置的静态资源url，所有静态资源必须是支持跨域的，那就得设置允许源。
++ Access-Control-Allow-Origin：跨域在服务端是不允许的。只能通过给Nginx配置Access-Control-Allow-Origin *后，才能使服务器能接受所有的请求源（Origin）。
++ Access-Control-Allow-Headers: 设置支持的Content-Type
+
+#### 5、应用间通信
+qiankun 通过发布订阅模式来实现应用间通信，状态由框架来统一维护，每个应用在初始化时由框架生成一套通信方法，应用通过这些方法来更改全局状态和注册回调函数，全局状态发生改变时触发各个应用注册的回调函数执行，将新旧状态传递到所有应用。
+
+initGlobalState
+
+TODO...
+
+#### 6、打包部署
+TODO...
 
 
-<!-- 
-qiankun与single-spa区别？
+
+
+
+::: tip qiankun与single-spa区别
 乾坤基于single-spa，加强了微应用集成能力，却抛弃了微模块的能力。所以，它们的区别就是微服务的粒度，乾坤的所能服务的粒度是应用级别，而single-spa则是模块级别。它们都能将前端进行拆分，只是拆分的粒度不同罢了。
 
-微应用加载器：“微”的粒度是应用，也就是HTML，它只能做到应用级别的分享
+微应用加载器：“微”的粒度是应用，也就是HTML，它只能做到应用级别的分享 <br/>
 微模块加载器：“微”的粒度是模块，也就是JS模块，它能做到模块级别的分享
+:::
 
 
-六、微前端的设计概念
-在设计时需要关注以下内容：
-
-中心化：应用注册表
-标志化应用
-应用生命周期管理    
-    (1) 加载应用
-    (2) 运行应用
-    (3) 卸载应用
-    load：决定加载哪个应用，并绑定生命周期
-    bootstrap：获取静态资源
-    mount：安装应用，如创建DOM节点。
-    unload：删除应用的生命周期
-    unmount：卸载应用，如删除DOM节点、取消事件绑定
-高内聚，低耦合 -->
+DEMO源码：<a href="https://github.com/bobo88/project-basis/tree/main/qiankun-basis" target="_blank">「qiankun」DEMO</a><br />
 
 参考文章：<br />
 <a href="https://qiankun.umijs.org/zh" target="_blank">「qiankun」 from 阿里</a><br />
 <a href="https://tehub.com/a/8xrFr58LyQ" target="_blank">基于qiankun的微前端最佳实践 -（同时加载多个微应用）</a><br />
+
+<!-- Vue+微前端(QianKun)落地实施和最后部署上线总结： https://juejin.cn/post/6973156414210441247 -->
