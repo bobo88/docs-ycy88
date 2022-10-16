@@ -542,7 +542,13 @@ initGlobalState
 TODO...
 
 #### 6、打包部署
-TODO...
+```js
+// 打包部署基本上是和 Nginx 配置相关
+```
+
+DEMO效果查看：<br/>
+<a href="http://demo.ycy88.com/" target="_blank">「qiankun」DEMO - 基座</a><br />
+<a href="http://demo.ycy88.com/micro-vue" target="_blank">「qiankun」DEMO - 加载子应用项目</a><br />
 
 
 
@@ -556,10 +562,9 @@ TODO...
 :::
 
 
-DEMO源码：<a href="https://github.com/bobo88/project-basis/tree/main/qiankun-basis" target="_blank">「qiankun」DEMO</a><br />
+DEMO源码：<a href="https://github.com/bobo88/project-basis/tree/main/qiankun-basis" target="_blank">「qiankun」DEMO源码</a><br />
 
 参考文章：<br />
 <a href="https://qiankun.umijs.org/zh" target="_blank">「qiankun」 from 阿里</a><br />
 <a href="https://tehub.com/a/8xrFr58LyQ" target="_blank">基于qiankun的微前端最佳实践 -（同时加载多个微应用）</a><br />
-
-<!-- Vue+微前端(QianKun)落地实施和最后部署上线总结： https://juejin.cn/post/6973156414210441247 -->
+<a href="https://juejin.cn/post/6973156414210441247" target="_blank">Vue+微前端(QianKun)落地实施和最后部署上线总结</a><br />
