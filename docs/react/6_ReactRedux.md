@@ -11,7 +11,7 @@ Redux 的官方 React 绑定， Official React bindings for Redux。<br/>
 :::
 
 本文将简单介绍「React Redux」的使用方法。
-###  一、React Redux 安装使用 和 redux-persist 持久化：
+###  一、安装使用 和 持久化
 第一步： 安装依赖 并 配置编写 store 相关文件
 ```js
 // 1. 安装依赖： 

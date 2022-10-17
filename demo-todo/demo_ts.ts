@@ -786,3 +786,18 @@
 
 
 
+// type SettingStore = {
+//     hideFooter: boolean;
+// }
+
+// function CHANG_SETTING<T, K extends keyof T>(obj: T, key: K, value: any): void {
+//     obj[key] = value
+// }
+
+// let state: SettingStore = {
+//     hideFooter: false
+// }
+
+// console.log(CHANG_SETTING(state, 'hideFooter', true))
+// console.log(CHANG_SETTING(state, 'abc', true))
+

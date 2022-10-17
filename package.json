@@ -9,5 +9,8 @@
   },
   "devDependencies": {
     "vuepress": "^1.9.7"
+  },
+  "dependencies": {
+    "ts-node": "^10.9.1"
   }
 }
