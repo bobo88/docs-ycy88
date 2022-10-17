@@ -9,7 +9,7 @@ qiankun 是一个基于 single-spa 的微前端实现库，旨在帮助大家能
 
 ### 一、安装
 ```js
-$ yarn add qiankun  # or npm i qiankun -S
+$ yarn add qiankun  // or npm i qiankun -S
 ```
 
 ### 二、使用

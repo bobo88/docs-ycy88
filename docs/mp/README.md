@@ -1,6 +1,6 @@
-## Hello VUE
+## Hello 小程序
 ::: tip 专题简介
-VUE专题
+小程序专题
 :::
 
 ::: tip
@@ -14,4 +14,4 @@ VUE专题
 5. 我要怎么用它？需要注意什么地方？
 :::
 
-![An image](~@/prev/vue.png)
+![An image](~@/mp/mp.jpeg)

@@ -17,6 +17,7 @@ module.exports = {
                     { text: 'React 系列', link: '/react/' },
                     { text: 'Typescript 系列', link: '/ts/' },
                     { text: 'Node 系列', link: '/node/' },
+                    { text: '小程序 系列', link: '/mp/' },
                     { text: '算法Leetcode', link: '/leetcode/' },
                 ]
             },
@@ -58,6 +59,15 @@ module.exports = {
                     collapsable: false,
                     sidebarDepth: 2,
                     children: getChildren(BASE_PATH + '/node/')
+                },
+            ],
+            '/mp/': [
+                {
+                    title: '小程序系列',
+                    path: '/mp/',
+                    collapsable: false,
+                    sidebarDepth: 2,
+                    children: getChildren(BASE_PATH + '/mp/')
                 },
             ],
             '/tech-list/': [
