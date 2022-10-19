@@ -108,6 +108,25 @@ $ pnpm create vite          // 使用 pnpm
 + WebAssembly
 + Web Workers
 
+#### 5. Vite使用插件
+```js
+// 添加一个插件
+$ npm add -D @vitejs/plugin-legacy
+
+// vite.config.js
+import legacy from '@vitejs/plugin-legacy'
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  plugins: [
+    legacy({
+      targets: ['defaults', 'not IE 11']
+    })
+  ]
+})
+```
+
+
 
 ### 三、Vite实战
 
