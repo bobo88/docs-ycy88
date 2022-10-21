@@ -14,4 +14,5 @@
 5. 我要怎么用它？需要注意什么地方？
 :::
 
-![An image](~@/mp/mp.jpeg)
+![An image](~@/mp/gh_code.jpg)
+<!-- ![An image](~@/mp/mp.jpeg) -->
