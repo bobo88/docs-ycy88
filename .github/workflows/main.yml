@@ -78,7 +78,7 @@ jobs:
         # 然后通过 pm2 进行管理启动
         script: |
           cd /usr/local/nginx/web/docs-web
-          rm -rf dist
+          rm -rf /docs/.vuepress/dist
           wget https://github.com/bobo88/docs-ycy88/releases/latest/download/release.tgz -O release.tgz
           tar zxvf release.tgz
 
