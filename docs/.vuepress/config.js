@@ -18,10 +18,16 @@ module.exports = {
                     { text: 'Typescript 系列', link: '/ts/' },
                     { text: 'Node 系列', link: '/node/' },
                     { text: '小程序 系列', link: '/mp/' },
+                    { text: '算法(Algorithm)', link: '/algorithm/' },
                     { text: '算法Leetcode', link: '/leetcode/' },
                 ]
             },
-            { text: '技术清单', link: '/tech-list/' },
+            {
+                text: '技术片段', 
+                items: [
+                    { text: '技术清单', link: '/tech-list/' },
+                ]
+            },
             { text: '园博吧', link: 'http://ycy88.com' },
         ],
         sidebar: {
@@ -86,6 +92,15 @@ module.exports = {
                     collapsable: false,
                     sidebarDepth: 2,
                     children: getChildren(BASE_PATH + '/tools/')
+                },
+            ],
+            '/algorithm/': [
+                {
+                    title: '算法Algorithm',
+                    path: '/algorithm/',
+                    collapsable: false,
+                    sidebarDepth: 2,
+                    children: getChildren(BASE_PATH + '/algorithm/')
                 },
             ],
             '/leetcode/': [
