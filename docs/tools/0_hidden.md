@@ -1,8 +1,17 @@
 ## todo
 
-css 隔离 : 样式的隔离有很多种处理方式，如：BEM、CSS Module、css 前缀、动态加载/卸载样式表、Web Components 自带隔离机制等。
+::: tip 
+Todo
+:::
 
+1. 前端工程化
+    + 开发
+    + 部署
+    + 测试
+    + 超多项目，超过人员开发，如何管控？
+    + 项目的可维护性？
+    + 项目的代码质量如何保证？
+    + 如何降低生产的风险？
 
-微前端vue项目实战 -- 乾坤qiankun框架 （一） ： https://blog.csdn.net/csl125/article/details/122990142
-
-<!-- https://zhulijun.club/ -->
+2. 前端监控系统搭建
+<!-- https://www.bilibili.com/video/BV1yU4y1N7gZ/?spm_id_from=333.788.recommend_more_video.3&vd_source=28cd89cb712dfc9837bdda7e02e89632 -->

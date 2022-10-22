@@ -801,8 +801,8 @@
 // console.log(CHANG_SETTING(state, 'hideFooter', true))
 // console.log(CHANG_SETTING(state, 'abc', true))
 
-let user: string | number;
-user = 123;
-user = 'abc';
-user = true;        // 不能将类型“boolean”分配给类型“string | number”。
+// let user: string | number;
+// user = 123;
+// user = 'abc';
+// user = true;        // 不能将类型“boolean”分配给类型“string | number”。
 
