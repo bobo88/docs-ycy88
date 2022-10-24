@@ -28,7 +28,8 @@ module.exports = {
                     { text: '技术清单', link: '/tech-list/' },
                 ]
             },
-            { text: '园博吧', link: 'http://ycy88.com' },
+            { text: '园博吧', link: 'https://ycy88.com' },
+            { text: 'Github', link: 'https://github.com/bobo88' },
         ],
         sidebar: {
             '/vue/': [

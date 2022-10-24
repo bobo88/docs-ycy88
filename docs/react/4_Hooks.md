@@ -142,7 +142,7 @@ useInsertionEffect
 ```
 
 DEMO验证：<br />
-<a href="http://ycy88.com/other" target="_blank">Hook useState/useEffect VS class组件</a><br />
+<a href="https://ycy88.com/other" target="_blank">Hook useState/useEffect VS class组件</a><br />
 
 参考：<br />
 <a href="https://zh-hans.reactjs.org/docs/hooks-intro.html" target="_blank">Hook 简介</a><br />

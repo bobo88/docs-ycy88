@@ -139,7 +139,7 @@ export default App;
 ```
 
 DEMO验证：<br />
-<a href="http://ycy88.com/other" target="_blank">DEMO -- Redux Test</a><br />
+<a href="https://ycy88.com/other" target="_blank">DEMO -- Redux Test</a><br />
 
 参考地址：<br/>
 <a href="https://www.reduxjs.cn/" target="_blank">Redux 中文网</a><br />
