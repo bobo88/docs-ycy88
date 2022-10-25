@@ -2,6 +2,8 @@
 
 ::: tip 概念
 UMI 是一个企业级前端开发框架。
+
+你可以将 Umi 简单的理解为一个专注性能的类 next.js 前端框架，并通过约定、自动生成和解析代码等方式来辅助开发，减少我们开发者的代码量。
 :::
 
 特点：
@@ -46,6 +48,14 @@ $ pnpm build
 ```
 
 ![An image](~@/tools/umijs.png)
+
+### 二、UMI 作用
+
+TODO...
+
+![An image](~@/tools/umijs_1.png)
+
+![An image](~@/tools/umijs_2.png)
 
 参考：<br />
 <a href="https://umijs.org/" target="_blank">umijs 官网（阿里巴巴）</a><br />
