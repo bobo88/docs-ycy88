@@ -2,7 +2,7 @@ const { getChildren } = require('./utils/autoSidebar');
 const BASE_PATH = './docs'
 
 module.exports = {
-    title: '袁波',
+    title: 'Frontend 技术指南',
     description: '技术清单文档',
     head: [
         ['link', { rel: 'shortcut icon', type: "image/x-icon", href: `/favicon.ico` }]
