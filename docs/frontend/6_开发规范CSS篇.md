@@ -206,3 +206,5 @@ CSS3 浏览器私有前缀在前，标准前缀在后
 
 参考：<br />
 <a href="https://juejin.cn/post/6844903874071887886" target="_blank">前端规范之 CSS 规范</a><br />
+<a href="https://www.ucloud.cn/yun/115097.html" target="_blank">stylelint 规则</a><br />
+<a href="https://stylelint.bootcss.com/" target="_blank">stylelint 中文文档</a><br />

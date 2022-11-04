@@ -81,6 +81,7 @@ $ npx husky add .husky/pre-commit "npx --no-install lint-staged"
 $ npx husky add .husky/commit-msg "npx --no -- commitlint --edit ${1}"
 
 // 2. 配置package.json
+// --fix：自动 eslint / stylelint 修复
 "lint-staged": {
   "*.vue": [
     "eslint --fix",
@@ -132,6 +133,26 @@ module.exports = {
     'subject-case': [0, 'never'],
   },
 };
+```
+
+::: tip 自动 stylelint 修复
+安装 stylelint、stylelint-config-prettier、stylelint-config-standard、stylelint-order，并配置 .stylelintrc.js 文件。
+:::
+
+```js
+// 1. 安装自动 stylelint 修复工具
+$ npm i stylelint stylelint-config-prettier stylelint-config-standard stylelint-order -D
+
+// 2. 配置 .stylelintrc.js 文件
+module.exports = {
+  plugins: ['stylelint-order'],
+  extends: ['stylelint-config-standard'],
+  rules: {
+    'no-duplicate-selectors': null,
+  },
+};
+
+// 3. git commit 时，如果【*.{htm,html,css,sss,less,scss,sass}】等文件中有问题，会自动修复
 ```
 
 #### 日志查看
@@ -209,3 +230,4 @@ $ gitmoji -c
 <a href="https://docs.gitlab.com/ee/integration/jira/index.html" target="_blank">第三方 Jira 集成</a><br />
 <a href="https://www.cnblogs.com/xiao2shiqi/p/13514548.html" target="_blank">集成 GitLab && JIRA 实现自动化工作流 </a><br />
 <a href="https://github.com/commitizen/cz-cli" target="_blank">commitizen</a><br />
+<a href="https://www.cnblogs.com/Yellow-ice/p/15349873.html" target="_blank">前端规范之 Git 工作流规范（Husky + Commitlint + Lint-staged） </a><br />
