@@ -6,7 +6,7 @@ Jenkins 是开源 CI&CD 软件领导者， 提供超过 1000 个插件来支持�
 
 #### Jenkins 运行的整体步骤（需要先安装好 jdk）：
 
-- 1. 下载 Jenkins（jenkins.war）.
+- 1. 下载 Jenkins（jenkins.war：https://mirrors.jenkins.io/war/latest/jenkins.war）.
 - 2. 打开终端进入到下载目录.
 - 3. 运行命令 java -jar jenkins.war --httpPort=8888.
 - 4. 打开浏览器进入链接 http://localhost:8888.
