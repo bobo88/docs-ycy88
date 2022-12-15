@@ -19,6 +19,7 @@ module.exports = {
         items: [
           { text: "前端规范", link: "/frontend/" },
           { text: "前端工程化", link: "/tools/" },
+          { text: "效率提升", link: "/efficiency/" },
         ],
       },
       {
@@ -159,6 +160,15 @@ module.exports = {
           collapsable: false,
           sidebarDepth: 2,
           children: getChildren(BASE_PATH + "/mgt/"),
+        },
+      ],
+      "/efficiency/": [
+        {
+          title: "效率提升",
+          path: "/efficiency/",
+          collapsable: false,
+          sidebarDepth: 2,
+          children: getChildren(BASE_PATH + "/efficiency/"),
         },
       ],
     },
