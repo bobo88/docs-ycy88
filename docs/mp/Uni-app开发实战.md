@@ -951,7 +951,24 @@ export default {
 
 :::
 
-### 二、xx
+### 八、分享功能
+
+#### 8.1 微信小程序分享
+
+```jsx
+<button class="invite-button" open-type="share" @click="share">
+  分享好友 小程序
+</button>
+
+onShareAppMessage(){
+  return{
+    title:'邀请好友领取海量现金券!',
+    path:'/pages/my/index',//页面 path ，必须是以 / 开头的完整路径
+    imageUrl:'https://docs.ycy88.com/assets/img/gh_code.051547d2.jpg',
+    desc:'我正在使用xxxApp，赶紧跟我一起来体验！',
+  }
+},
+```
 
 ### 二、xx
 
