@@ -20,6 +20,7 @@ module.exports = {
           { text: "前端规范", link: "/frontend/" },
           { text: "前端工程化", link: "/tools/" },
           { text: "效率提升", link: "/efficiency/" },
+          { text: "协议相关", link: "/protocol/" },
         ],
       },
       {
@@ -169,6 +170,15 @@ module.exports = {
           collapsable: false,
           sidebarDepth: 2,
           children: getChildren(BASE_PATH + "/efficiency/"),
+        },
+      ],
+      "/protocol/": [
+        {
+          title: "协议相关",
+          path: "/protocol/",
+          collapsable: false,
+          sidebarDepth: 2,
+          children: getChildren(BASE_PATH + "/protocol/"),
         },
       ],
     },
