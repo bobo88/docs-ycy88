@@ -7,7 +7,7 @@ module.exports = {
   head: [
     [
       "link",
-      { rel: "shortcut icon", type: "image/x-icon", href: `/favicon_li.ico` },
+      { rel: "shortcut icon", type: "image/x-icon", href: `/favicon.ico` },
     ],
   ],
   themeConfig: {
