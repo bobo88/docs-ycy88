@@ -19,8 +19,8 @@ module.exports = {
         items: [
           { text: "前端规范", link: "/frontend/" },
           { text: "前端工程化", link: "/tools/" },
-          { text: "效率提升", link: "/efficiency/" },
           { text: "协议相关", link: "/protocol/" },
+          { text: "效率提升", link: "/efficiency/" },
         ],
       },
       {
@@ -43,8 +43,12 @@ module.exports = {
         ],
       },
       {
-        text: "技术片段",
-        items: [{ text: "技术清单", link: "/tech-list/" }],
+        text: "JS系列",
+        items: [
+          { text: "JS基础", link: "/js-base/" },
+          { text: "JS原理", link: "/js-theory/" },
+          { text: "JS进阶", link: "/js-advanced/" },
+        ],
       },
       {
         text: "其他链接",
@@ -100,13 +104,31 @@ module.exports = {
           children: getChildren(BASE_PATH + "/mp/"),
         },
       ],
-      "/tech-list/": [
+      "/js-base/": [
         {
-          title: "技术清单",
-          path: "/tech-list/",
+          title: "JS基础",
+          path: "/js-base/",
           collapsable: false,
           sidebarDepth: 2,
-          children: getChildren(BASE_PATH + "/tech-list/"),
+          children: getChildren(BASE_PATH + "/js-base/"),
+        },
+      ],
+      "/js-theory/": [
+        {
+          title: "JS原理",
+          path: "/js-theory/",
+          collapsable: false,
+          sidebarDepth: 2,
+          children: getChildren(BASE_PATH + "/js-theory/"),
+        },
+      ],
+      "/js-advanced/": [
+        {
+          title: "JS进阶",
+          path: "/js-advanced/",
+          collapsable: false,
+          sidebarDepth: 2,
+          children: getChildren(BASE_PATH + "/js-advanced/"),
         },
       ],
       "/tools/": [
