@@ -2,12 +2,12 @@ const { getChildren } = require("./utils/autoSidebar");
 const BASE_PATH = "./docs";
 
 module.exports = {
-  title: "Frontend 技术指南",
+  title: "前端博客小站 - Ms. Li",
   description: "技术清单文档",
   head: [
     [
       "link",
-      { rel: "shortcut icon", type: "image/x-icon", href: `/favicon.ico` },
+      { rel: "shortcut icon", type: "image/x-icon", href: `/favicon_li.ico` },
     ],
   ],
   themeConfig: {
@@ -49,8 +49,8 @@ module.exports = {
       {
         text: "其他链接",
         items: [
-          { text: "园博吧", link: "https://ycy88.com" },
-          { text: "Github", link: "https://github.com/bobo88" },
+          { text: "About Me", link: "https://ycy88.com" },
+          { text: "Github", link: "https://github.com/lijunfang1209" },
         ],
       },
     ],
@@ -182,6 +182,7 @@ module.exports = {
         },
       ],
     },
+    lastUpdated: "上次更新时间",
   },
   markdown: {
     lineNumbers: true,

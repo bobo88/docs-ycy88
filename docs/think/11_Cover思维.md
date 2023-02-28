@@ -1,0 +1,9 @@
+## Cover 思维
+
+Cover 思维：决定你命运的不是智商，而是思维方式。
+::: tip 关键词
+覆盖 / 全部 / 无需兜底
+:::
+
+参考地址：<br/>
+<a href="xx" target="_blank">xxx</a><br />
