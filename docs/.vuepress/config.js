@@ -49,7 +49,7 @@ module.exports = {
       {
         text: "其他链接",
         items: [
-          { text: "About Me", link: "https://ycy88.com" },
+          { text: "About Me", link: "https://ycy88.com/about-me" },
           { text: "Github", link: "https://github.com/lijunfang1209" },
         ],
       },
