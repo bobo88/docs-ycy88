@@ -36,18 +36,19 @@ module.exports = {
         ],
       },
       {
-        text: "思维训练",
-        items: [
-          { text: "技术思维", link: "/think/" },
-          { text: "管理思维", link: "/mgt/" },
-        ],
-      },
-      {
         text: "JS系列",
         items: [
           { text: "JS基础", link: "/js-base/" },
           { text: "JS原理", link: "/js-theory/" },
           { text: "JS进阶", link: "/js-advanced/" },
+        ],
+      },
+      {
+        text: "读书系列",
+        items: [
+          { text: "读书破万卷", link: "/readbook/" },
+          { text: "技术思维", link: "/think/" },
+          { text: "管理思维", link: "/mgt/" },
         ],
       },
       {
@@ -201,6 +202,15 @@ module.exports = {
           collapsable: false,
           sidebarDepth: 2,
           children: getChildren(BASE_PATH + "/protocol/"),
+        },
+      ],
+      "/readbook/": [
+        {
+          title: "读书系列",
+          path: "/readbook/",
+          collapsable: false,
+          sidebarDepth: 2,
+          children: getChildren(BASE_PATH + "/readbook/"),
         },
       ],
     },
