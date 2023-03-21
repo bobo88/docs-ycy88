@@ -31,6 +31,8 @@ module.exports = {
           { text: "Typescript 系列", link: "/ts/" },
           { text: "Node 系列", link: "/node/" },
           { text: "小程序 系列", link: "/mp/" },
+          { text: "Flutter 系列", link: "/flutter/" },
+          { text: "Electron 系列", link: "/electron/" },
           { text: "算法(Algorithm)", link: "/algorithm/" },
           { text: "算法Leetcode", link: "/leetcode/" },
         ],
@@ -211,6 +213,24 @@ module.exports = {
           collapsable: false,
           sidebarDepth: 2,
           children: getChildren(BASE_PATH + "/readbook/"),
+        },
+      ],
+      "/flutter/": [
+        {
+          title: "Flutter 系列",
+          path: "/flutter/",
+          collapsable: false,
+          sidebarDepth: 2,
+          children: getChildren(BASE_PATH + "/flutter/"),
+        },
+      ],
+      "/electron/": [
+        {
+          title: "Electron 系列",
+          path: "/electron/",
+          collapsable: false,
+          sidebarDepth: 2,
+          children: getChildren(BASE_PATH + "/electron/"),
         },
       ],
     },
