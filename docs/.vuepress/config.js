@@ -9,6 +9,22 @@ module.exports = {
       "link",
       { rel: "shortcut icon", type: "image/x-icon", href: `/favicon.ico` },
     ],
+    // 添加百度统计代码
+    [
+      "script",
+      {},
+      `
+      <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?df157c53430ce6c22b63eca170c9464e";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+        </script>
+    `,
+    ],
   ],
   themeConfig: {
     nav: [
