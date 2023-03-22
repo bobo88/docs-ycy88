@@ -244,7 +244,7 @@ $ npx husky add .husky/commit-msg "npx --no -- commitlint --edit ${1}"
 
 ### 五、DEMO 源码
 
-<a href="https://github.com/bobo88/husky-basic" target="_blank">husky-basic by Bob</a><br />
+<a href="https://github.com/bobo88/husky-basic" target="_blank">husky-basic </a><br />
 
 参考：<br />
 <a href="https://git-scm.com/docs/githooks" target="_blank">githooks 官网</a><br />

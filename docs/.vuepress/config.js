@@ -9,6 +9,20 @@ module.exports = {
       "link",
       { rel: "shortcut icon", type: "image/x-icon", href: `/favicon.ico` },
     ],
+    // 添加百度统计代码
+    [
+      "script",
+      {},
+      `
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?df157c53430ce6c22b63eca170c9464e";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+    `,
+    ],
   ],
   themeConfig: {
     nav: [
@@ -31,15 +45,10 @@ module.exports = {
           { text: "Typescript 系列", link: "/ts/" },
           { text: "Node 系列", link: "/node/" },
           { text: "小程序 系列", link: "/mp/" },
+          { text: "Flutter 系列", link: "/flutter/" },
+          { text: "Electron 系列", link: "/electron/" },
           { text: "算法(Algorithm)", link: "/algorithm/" },
           { text: "算法Leetcode", link: "/leetcode/" },
-        ],
-      },
-      {
-        text: "思维训练",
-        items: [
-          { text: "技术思维", link: "/think/" },
-          { text: "管理思维", link: "/mgt/" },
         ],
       },
       {
@@ -48,6 +57,14 @@ module.exports = {
           { text: "JS基础", link: "/js-base/" },
           { text: "JS原理", link: "/js-theory/" },
           { text: "JS进阶", link: "/js-advanced/" },
+        ],
+      },
+      {
+        text: "读书系列",
+        items: [
+          { text: "读书破万卷", link: "/readbook/" },
+          { text: "技术思维", link: "/think/" },
+          { text: "管理思维", link: "/mgt/" },
         ],
       },
       {
@@ -201,6 +218,33 @@ module.exports = {
           collapsable: false,
           sidebarDepth: 2,
           children: getChildren(BASE_PATH + "/protocol/"),
+        },
+      ],
+      "/readbook/": [
+        {
+          title: "读书系列",
+          path: "/readbook/",
+          collapsable: false,
+          sidebarDepth: 2,
+          children: getChildren(BASE_PATH + "/readbook/"),
+        },
+      ],
+      "/flutter/": [
+        {
+          title: "Flutter 系列",
+          path: "/flutter/",
+          collapsable: false,
+          sidebarDepth: 2,
+          children: getChildren(BASE_PATH + "/flutter/"),
+        },
+      ],
+      "/electron/": [
+        {
+          title: "Electron 系列",
+          path: "/electron/",
+          collapsable: false,
+          sidebarDepth: 2,
+          children: getChildren(BASE_PATH + "/electron/"),
         },
       ],
     },
