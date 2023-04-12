@@ -63,8 +63,8 @@ module.exports = {
         text: "读书系列",
         items: [
           { text: "读书破万卷", link: "/readbook/" },
-          { text: "技术思维", link: "/think/" },
-          { text: "管理思维", link: "/mgt/" },
+          // { text: "技术思维", link: "/think/" },
+          // { text: "管理思维", link: "/mgt/" },
         ],
       },
       {
