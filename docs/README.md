@@ -4,4 +4,4 @@
 专注于前端领域！
 :::
 
-![An image](~~/prev/web.jpg)
+![An image](/images/prev/web.jpg)

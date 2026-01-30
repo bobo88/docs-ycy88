@@ -1,0 +1,38 @@
+// {
+//     "[javascript]": {
+//         "editor.defaultFormatter": "esbenp.prettier-vscode"
+//     },
+//     "git.confirmSync": false,
+//     "git.enableSmartCommit": true,
+//     "window.zoomLevel": 1
+// }
+{
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "git.suggestSmartCommit": false,
+  "git.confirmSync": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  // "javascript.updateImportsOnFileMove.enabled": "always", //保存的时候自动格式化
+  "editor.inlayHints.enabled": "off",
+  "color-highlight.markerType": "dot-before",
+  "vue.autoInsert.dotValue": true,
+  "vue.server.petiteVue.supportHtmlFile": true,
+  "vue.splitEditors.icon": true,
+  "vue.inlayHints.inlineHandlerLeading": true,
+  "vue.inlayHints.missingProps": true,
+  // 添加 vue 支持
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.validate": ["javascript", "vue", "typescript", "jsx", "html", "tsx"],
+  "editor.formatOnSave": true,
+  "vue.splitEditors.layout.left": ["script", "scriptSetup", "styles"],
+  "typescript.validate.enable": true,
+  "volar.icon.splitEditors": true,
+  "window.zoomLevel": 1,
+  "workbench.editorAssociations": {
+    "*.IPGSD": "default"
+  }
+}

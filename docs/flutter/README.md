@@ -4,4 +4,4 @@
 Flutter 专题
 :::
 
-![An image](~@/flutter/logo.jpg)
+![An image](/images/flutter/logo.jpg)
