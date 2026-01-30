@@ -29,10 +29,146 @@ head:
 }
 </style>
 
-<div style="margin: 0 auto;">
-  <img src="/images/ljf-2.png" alt="ljf" class="ljf-img" style="width: 200px; height:200px;  border-radius: 50%;">
-  <span>abc</span>
+<div class="profile-section">
+  <div class="profile-container">
+    <div class="profile-left">
+      <img src="/images/ljf-2.png" alt="ljf" class="profile-img">
+    </div>
+    <div class="profile-right">
+      <h2 class="profile-name">Victoria J. Li</h2>
+      <p class="profile-title">前端开发工程师 & 知识博主</p>
+      <div class="profile-desc">
+        <p>专注于前端技术栈的深度探索与实践，热爱分享技术心得与成长经验。</p>
+        <p>致力于构建高质量的技术内容，帮助开发者提升技能水平。</p>
+      </div>
+      <div class="profile-tags">
+        <span class="tag">Shopify</span>
+        <span class="tag">Vue.js</span>
+        <span class="tag">React</span>
+        <span class="tag">Node.js</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">TS</span>
+        <span class="tag">小程序</span>
+        <span class="tag">前端</span>
+        <span class="tag">管理</span>
+      </div>
+    </div>
+  </div>
 </div>
+
+<style>
+.profile-section {
+  margin: 0 0 1rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.05));
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.profile-left {
+  flex-shrink: 0;
+}
+
+.profile-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.profile-right {
+  flex: 1;
+}
+
+.profile-name {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(45deg, #00c6ff, #0072ff, #6a1b9a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.profile-title {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.profile-desc {
+  margin-bottom: 2rem;
+}
+
+.profile-desc p {
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.profile-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.tag {
+  padding: 0.4rem 1rem;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border-radius: 2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  transition: all 0.3s ease;
+}
+
+.tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+@media (max-width: 768px) {
+  .profile-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .profile-name {
+    font-size: 2rem;
+  }
+
+  .profile-img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .profile-tags {
+    justify-content: center;
+  }
+}
+</style>
 
 ## 网站版块介绍
 
@@ -144,8 +280,8 @@ head:
   flex-direction: column;
   align-items: center;
   padding: 1.5rem;
-  color: #fedc5e;
-  background: #8fd1e1;
+  color: #c8c7c5;
+  background: #002fa7;
   border-radius: 1rem;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -173,30 +309,29 @@ head:
 .tech-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-  background: #fedc5e;
-
+  background: #c8c7c5;
   border-color: rgba(255, 255, 255, 0.4);
   text-decoration: none;
 }
 .tech-card:hover .tech-name {
-  color: #282828 !important;
+  color: #002fa7 !important;
   text-decoration: none;
 }
-/* .tech-card:hover .tech-icon {
-  color: #fff;
-} */
+.tech-card:hover .tech-icon {
+  color: #282828;
+}
 
 .tech-icon {
   font-size: 2.5rem;
   margin-bottom: 0.8rem;
-  color: #999;
+  color: #fff;
   /* filter: drop-shadow(0 0 10px rgba(0, 198, 255, 0.3)); */
 }
 
 .tech-name {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #fedc5e;
+  color: #c8c7c5;
   text-align: center;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
