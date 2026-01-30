@@ -180,7 +180,7 @@ $ git cz
 $ git push
 ```
 
-![An image](~@/frontend/gitcz.png)
+![An image](/images/frontend/gitcz.png)
 
 ### 四、生成 Change log
 
@@ -199,7 +199,7 @@ $ npm install -g conventional-changelog-cli
 $ npm run version
 ```
 
-![An image](~@/frontend/gitchangelog.png)
+![An image](/images/frontend/gitchangelog.png)
 
 ### 五、趣味性的 gitmoji
 
@@ -211,7 +211,7 @@ $ npm i -g gitmoji-cli
 $ gitmoji -c
 ```
 
-![An image](~@/frontend/gitmoji.png)
+![An image](/images/frontend/gitmoji.png)
 
 ::: warning 关于 gitmoji
 个人觉得这个工具略显浮夸，个人项目或者小型项目可以玩一玩，增加趣味性。但中大型项目不太建议使用。

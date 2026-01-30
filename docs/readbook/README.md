@@ -4,4 +4,4 @@
 记录阅读书籍 / 提炼总结
 :::
 
-![An image](~@/prev/web.jpg)
+![An image](/images/prev/web.jpg)

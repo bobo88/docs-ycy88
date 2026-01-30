@@ -30,4 +30,4 @@ $ npm i -g ts-node
 // 2. 运行TS文件： ts-node **.ts
 ```
 
-![An image](~@/prev/ts.png)
+![An image](/images/prev/ts.png)

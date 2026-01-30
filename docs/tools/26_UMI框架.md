@@ -47,15 +47,15 @@ $ pnpm build
 // 产物默认会生成到 ./dist 目录下，将 dist 目录部署到服务器上即可。
 ```
 
-![An image](~@/tools/umijs.png)
+![An image](/images/tools/umijs.png)
 
 ### 二、UMI 作用
 
 TODO...
 
-![An image](~@/tools/umijs_1.png)
+![An image](/images/tools/umijs_1.png)
 
-![An image](~@/tools/umijs_2.png)
+![An image](/images/tools/umijs_2.png)
 
 参考：<br />
 <a href="https://umijs.org/" target="_blank">umijs 官网（阿里巴巴）</a><br />

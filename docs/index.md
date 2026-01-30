@@ -39,7 +39,7 @@ head:
       <p class="profile-title">前端开发工程师 & 知识博主</p>
       <div class="profile-desc">
         <p>专注于前端技术栈的深度探索与实践，热爱分享技术心得与成长经验。</p>
-        <p>致力于构建高质量的技术内容，帮助开发者提升技能水平。</p>
+        <!-- <p>致力于构建高质量的技术内容，帮助开发者提升技能水平。</p> -->
       </div>
       <div class="profile-tags">
         <span class="tag">Shopify</span>

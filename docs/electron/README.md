@@ -4,4 +4,4 @@
 Electron 专题
 :::
 
-![An image](~@/electron/logo.png)
+![An image](/images/electron/logo.png)

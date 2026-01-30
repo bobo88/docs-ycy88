@@ -1,21 +1,25 @@
-## VUE全家桶之Pinia
+## VUE 全家桶之 Pinia
+
 ::: tip 概念
 Pinia 是一个用于 Vue 的状态管理库，类似 Vuex, 是 Vue 的另一种状态管理方案
 :::
 
 ### 一、使用步骤：
-+ 安装:
+
+- 安装:
+
 ```js
 yarn add pinia@next
 ```
 
-+ 创建一个 pinia（根存储）并将其传递给应用程序:
+- 创建一个 pinia（根存储）并将其传递给应用程序:
+
 ```js
-import { createPinia } from 'pinia';
+import { createPinia } from "pinia";
 app.use(createPinia());
 ```
 
-+ 核心概念与基本使用:
+- 核心概念与基本使用:
 <p>1. Store:</p>
 
 ```js
@@ -39,14 +43,14 @@ export const useStore = defineStore({
 ```html
 <!-- ============ Store 使用 ============= -->
 <script lang="ts" setup>
-    // 导入 Store， 使用自己的路径
-    import { useStore } from '@/store/store'
-    import { storeToRefs } from 'pinia'
+  // 导入 Store， 使用自己的路径
+  import { useStore } from "@/store/store";
+  import { storeToRefs } from "pinia";
 
-    // 调用函数 获得Store
-    const store = useStore()
-    // state解构：storeToRefs
-    const { counter } = storeToRefs(store)
+  // 调用函数 获得Store
+  const store = useStore();
+  // state解构：storeToRefs
+  const { counter } = storeToRefs(store);
 </script>
 ```
 
@@ -72,8 +76,9 @@ actions: {
 }
 ```
 
-+ 常用插件:
-数据持久化： pinia-plugin-persist，用于页面刷新后数据依然能保持。
+- 常用插件:
+  数据持久化： pinia-plugin-persist，用于页面刷新后数据依然能保持。
+
 ```js
 // ============ pinia-plugin-persist =============
 // 安装
@@ -112,10 +117,9 @@ persist: {
 }
 ```
 
-### 二、Pinia源码简析：
-![An image](~@/prev/pinia.png)
+### 二、Pinia 源码简析：
 
-
+![An image](/images/prev/pinia.png)
 
 参考：<br />
 <a href="https://pinia.web3doc.top/" target="_blank">官网（中文）</a><br />
@@ -125,4 +129,4 @@ persist: {
 <a href="https://segmentfault.com/a/1190000040373313" target="_blank">Pinia 快速入门</a><br />
 <a href="https://juejin.cn/post/7031727358369333279" target="_blank">Pinia(皮尼亚)源码分析</a><br />
 <a href="https://segmentfault.com/a/1190000041246156" target="_blank">Pinia.js 上手指南</a><br />
-<a href="https://juejin.cn/post/7063376847198748702" target="_blank">拥抱pinia，快速上手，详解指南</a><br />
+<a href="https://juejin.cn/post/7063376847198748702" target="_blank">拥抱 pinia，快速上手，详解指南</a><br />

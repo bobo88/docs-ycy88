@@ -3,46 +3,48 @@
 ::: tip 概念
 performant npm，意味“高性能的 npm”，快速的，节省磁盘空间的包管理工具。
 
-pnpm由npm/yarn衍生而来，解决了npm/yarn内部潜在的bug，极大的优化了性能，扩展了使用场景。被誉为“最先进的包管理工具”。
+pnpm 由 npm/yarn 衍生而来，解决了 npm/yarn 内部潜在的 bug，极大的优化了性能，扩展了使用场景。被誉为“最先进的包管理工具”。
 :::
 
-pnpm有以下几个特点：
-+ 快速: pnpm 比其他包管理器快 2 倍
-+ 高效: node_modules 中的文件为复制或链接自特定的内容寻址存储库
-+ 支持 monorepos: pnpm 内置支持单仓多包
-+ 严格: pnpm 默认创建了一个非平铺的 node_modules，因此代码无法访问任意包
+pnpm 有以下几个特点：
 
+- 快速: pnpm 比其他包管理器快 2 倍
+- 高效: node_modules 中的文件为复制或链接自特定的内容寻址存储库
+- 支持 monorepos: pnpm 内置支持单仓多包
+- 严格: pnpm 默认创建了一个非平铺的 node_modules，因此代码无法访问任意包
 
 ### 一、安装
+
 ```js
 $ npm install -g pnpm
 ```
 
-### 二、对比yarn与npm
+### 二、对比 yarn 与 npm
 
-![An image](~@/tools/pnpm.png)
+![An image](/images/tools/pnpm.png)
 
-
-### 三、pnpm的特点解析
+### 三、pnpm 的特点解析
 
 #### 1. 节约磁盘空间并提升安装速度
-当使用 npm 或 Yarn 时，如果你有 100 个项目使用了某个依赖（dependency），就会有 100 份该依赖的副本保存在硬盘上。  而在使用 pnpm 时，依赖会被存储在内容可寻址的存储中，所以：
 
-如果你用到了某依赖项的不同版本，只会将不同版本间有差异的文件添加到仓库。 例如，如果某个包有100个文件，而它的新版本只改变了其中1个文件。那么 pnpm update 时只会向存储中心额外添加1个新文件，而不会因为仅仅一个文件的改变复制整新版本包的内容。
+当使用 npm 或 Yarn 时，如果你有 100 个项目使用了某个依赖（dependency），就会有 100 份该依赖的副本保存在硬盘上。 而在使用 pnpm 时，依赖会被存储在内容可寻址的存储中，所以：
+
+如果你用到了某依赖项的不同版本，只会将不同版本间有差异的文件添加到仓库。 例如，如果某个包有 100 个文件，而它的新版本只改变了其中 1 个文件。那么 pnpm update 时只会向存储中心额外添加 1 个新文件，而不会因为仅仅一个文件的改变复制整新版本包的内容。
 
 所有文件都会存储在硬盘上的某一位置。 当软件包被被安装时，包里的文件会硬链接到这一位置，而不会占用额外的磁盘空间。 这允许你跨项目地共享同一版本的依赖。
 
 因此，您在磁盘上节省了大量空间，这与项目和依赖项的数量成正比，并且安装速度要快得多！
 
 #### 2. 创建非扁平化的 node_modules 文件夹
+
 使用 npm 或 Yarn Classic 安装依赖项时，所有包都被提升到模块目录的根目录。 因此，项目可以访问到未被添加进当前项目的依赖。
 
 默认情况下，pnpm 使用软链的方式将项目的直接依赖添加进模块文件夹的根目录。
 
-![An image](~@/tools/pnpm_1.jpeg)
-
+![An image](/images/tools/pnpm_1.jpeg)
 
 ### 四、常见命令
+
 ```js
 // 管理依赖
 pnpm add <pkg>                      // 安装软件包及其依赖的任何软件包。 默认情况下，任何新软件包都安装为生产依赖项。
@@ -91,10 +93,9 @@ pnpm doctor                         // 检查pnpm配置的已知常见问题。
 ```
 
 ### 五、性能对比
+
 <a href="https://pnpm.io/zh/benchmarks" target="_blank">Benchmarks of JavaScript Package Managers</a>
 
-
-
 参考：<br />
-<a href="https://pnpm.io/zh/" target="_blank">PNPM官方中文文档</a><br />
-<a href="https://www.pnpm.cn/" target="_blank">PNPM中文网</a><br />
+<a href="https://pnpm.io/zh/" target="_blank">PNPM 官方中文文档</a><br />
+<a href="https://www.pnpm.cn/" target="_blank">PNPM 中文网</a><br />

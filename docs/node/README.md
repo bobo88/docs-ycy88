@@ -16,7 +16,7 @@ Node 专题
 5. 我要怎么用它？需要注意什么地方？
    :::
 
-![An image](~@/prev/node.png)
+![An image](/images/prev/node.png)
 
 参考地址：<br/>
 <a href="https://nodejs.org/zh-cn/" target="_blank">NodeJS（中文版）</a><br />

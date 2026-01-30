@@ -95,7 +95,7 @@ $ git commit -m "Keep calm and commit"
 
 DEMO 步骤验证截图：
 
-![An image](~@/tools/husky.png)
+![An image](/images/tools/husky.png)
 
 #### 3. 配置 lint-staged
 
@@ -171,9 +171,9 @@ git add .
 git commit -m 'add'
 ```
 
-![An image](~@/tools/husky_2.png)
+![An image](/images/tools/husky_2.png)
 
-![An image](~@/tools/husky_3.png)
+![An image](/images/tools/husky_3.png)
 
 #### 5. 配置 commitlint
 
@@ -228,7 +228,7 @@ module.exports = {
 };
 ```
 
-![An image](~@/tools/husky_4.png)
+![An image](/images/tools/husky_4.png)
 
 ### 四、完整的命令流程
 

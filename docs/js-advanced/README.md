@@ -16,4 +16,4 @@
 5. 我要怎么用它？需要注意什么地方？
    :::
 
-![An image](~@/prev/web.jpg)
+![An image](/images/prev/web.jpg)

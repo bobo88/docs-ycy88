@@ -1,6 +1,6 @@
 ## DevOps 架构
 
-![An image](~@/tools/DevOps/DevOps2.png)
+![An image](/images/tools/DevOps/DevOps2.png)
 DevOps（Development 和 Operations 的组合词）是一组过程、方法与系统的统称，用于促进开发（应用程序/软件工程）、技术运营和质量保障（QA）部门之间的沟通、协作与整合。
 
 它是一种重视“软件开发人员（Dev）”和“IT 运维技术人员（Ops）”之间沟通合作的文化、运动或惯例。透过自动化“软件交付”和“架构变更”的流程，来使得构建、测试、发布软件能够更加地快捷、频繁和可靠。
@@ -29,7 +29,7 @@ DevOps 的引入能对产品交付、测试、功能开发和维护（包括 ─
 
   - 此原则在于了解客户需求，创造能解决实际问题的产品或服务。团队不应“在泡沫中构建”，也不应基于对消费者使用软件方式的臆测来开发软件。相反，DevOps 团队应从创建到实施全方位了解产品的各个方面。
 
-![An image](~@/tools/DevOps/DevOps.png)
+![An image](/images/tools/DevOps/DevOps.png)
 
 ### 二、DORA 指标
 
@@ -55,7 +55,7 @@ DevOps 从业人员依靠 DORA 开发的四个关键指标来衡量其 DevOps �
   - 可缩短提前期的相同实践（测试自动化、主干开发和小批量工作）与降低变更失败率相关。所有这些实践都使缺陷更容易识别和补救。
   - 跟踪和报告更改失败率不仅对于识别和修复错误很重要，对于确保新的代码版本符合安全要求也非常重要。
 
-![An image](~@/tools/DevOps/DevOps3.png)
+![An image](/images/tools/DevOps/DevOps3.png)
 
 ### 三、DevOps 生命周期关键阶段
 
@@ -86,12 +86,12 @@ DevOps 从业人员依靠 DORA 开发的四个关键指标来衡量其 DevOps �
   - 工具：Bitbucket、 Github、 GitLab
   - 控制您的源代码至关重要。源代码控制工具有助于将代码存储在不同的链中，这样您就可以看到每项变更，并通过共享这些变更更轻松地进行协作。与其等待变更审批委员会批准后再部署到生产环境，您可以通过使用拉取请求执行同行审查，来提高代码质量和吞吐量。
 
-![An image](~@/tools/DevOps/DevOps_Pipeline.png)
+![An image](/images/tools/DevOps/DevOps_Pipeline.png)
 
 #### 4. 持续交付
 
 - 工具：Jenkins、 AWS、 Bitbucket、 CircleCI、 Sonarsource
-  ![An image](~@/tools/DevOps/DevOps_cd.png)
+  ![An image](/images/tools/DevOps/DevOps_cd.png)
 - 持续集成是指每天多次向共享代码库签入代码，并且在每次都进行测试的一种做法。这样，您可以及早自动发现问题、在最容易修复的时候解决问题，并尽快为用户提供新功能。
 - 通过拉取请求进行代码审查需要创建分支，而且十分盛行。DevOps North Star 是一个工作流程，它可以在不降低开发速度的情况下更快速地创建更少的分支，并保持测试严格性。
 - 您可以寻找具有以下功能的工具：不仅可以自动将您的测试应用于开发分支，还可以在分支创建成功时选择推送到主干。除此之外，通过简单的集成，您可以根据团队的实时聊天警报获得持续反馈。
@@ -99,11 +99,11 @@ DevOps 从业人员依靠 DORA 开发的四个关键指标来衡量其 DevOps �
 #### 5. 测试
 
 - 自动化测试
-  ![An image](~@/tools/DevOps/DevOps_test.png)
+  ![An image](/images/tools/DevOps/DevOps_test.png)
 
 #### 6. 监控
 
-![An image](~@/tools/DevOps/DevOps_observe.png)
+![An image](/images/tools/DevOps/DevOps_observe.png)
 
 - 应用程序和服务器性能监控
 - 有两种类型的监控应该是自动的：服务器监控和应用程序性能监控。
